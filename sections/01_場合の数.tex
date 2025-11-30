@@ -1,0 +1,160 @@
+% 第１節 場合の数
+\section{場合の数}
+\subsection{集合の要素の個数}
+% 割愛
+
+\subsection{場合の数}
+% 割愛
+
+\subsection{順列}
+
+\begin{definitionbox}[def:順列]{\textbf{順列}}
+    \label{def:順列}
+    いくつかのものを順に1列に並べるとき, その並びの1つ1つを \textbf{順列} という.
+
+    一般に, \uwave{異なる $n$ 個のものから異なる $r$ 個を取り出して}並べる順列を
+    \begin{center}
+        $\bm{n}$\textbf{個から}$\bm{r}$\textbf{個取る順列}
+    \end{center}
+    といい, その総数を $_{\bm{n}}\mathbf{P}_{\bm{r}}$ $^{*}$ で表す.
+\end{definitionbox}
+
+\begin{theorembox}[thm:順列の総数①]{\textbf{順列の総数① $_{\bm{n}}\mathbf{P}_{\bm{r}}$}}
+    \label{thm:順列の総数①}
+    $n$ 個から $r$ 個取る順列の総数 $_{n}\mathrm{P}_{r}$ は次の式で表される.
+
+    \begin{align}
+        _{\bm{n}}\mathbf{P}_{\bm{r}} = \bm{n \cdot (n-1) \cdot (n-2) \cdots \cdots (n-r+1)}
+        \label{eq:順列の総数①}
+    \end{align}
+\end{theorembox}
+\vspace{1em}
+
+順列の総数 ${}_n\mathrm{P}_r$ の式で, 特に $r = n$ のときは等式
+
+\begin{align*}
+    _{n}\mathrm{P}_{n} = n(n-1)(n-2) \cdots \cdots 3 \cdot 2 \cdot 1 \tag{*}
+\end{align*}
+
+が得られる.
+
+\begin{definitionbox}[def:階乗]{\textbf{階乗}}
+    \label{def:階乗}
+    $(*)$ の右辺は, $1$ から $n$ までのすべての自然数の積である.
+
+    これを $n$ の \textbf{階乗} といい, $\bm{n!}$ で表す.
+\end{definitionbox}
+
+
+\vfill
+
+\noindent
+\rule{\textwidth}{0.4pt}
+
+\noindent
+$^{*}$ ${}_n\mathrm{P}_r$ の P は 順列を意味するPermutation の頭文字である.\\
+
+\newpage
+
+\begin{theorembox}[thm:階乗]{\textbf{階乗}}
+    \label{thm:階乗}
+    \ref{def:階乗} より, $n$ の階乗 $n!$ は次の式で表される.
+
+    \begin{align}
+        _{\bm{n}}\mathbf{P}_{\bm{r}} \bm{=} \bm{n!} \bm{=} \bm{n (n-1) (n-2) \cdots \cdots 3 \cdot 2 \cdot 1}
+        \label{eq:階乗}
+    \end{align}
+\end{theorembox}
+\vspace{1em}
+
+Definition\ref{def:順列}より, 一般に, 次のことがいえる.
+
+\[\textbf{異なる} \bm{n} \textbf{個のものすべてを並べる順列の総数は}\;\; \bm{n!} \;\;\textbf{である}\]
+
+また, 順列の総数 ${}_n\mathrm{P}_r$ の式で, $r < n$ のときについて考える.
+\vspace{1em}
+
+% 証明
+
+
+\begin{theorembox}[thm:順列の総数②]{\textbf{順列の総数② $_{\bm{n}}\mathbf{P}_{\bm{r}}$}}
+    \label{thm:順列の総数②}
+
+    \begin{align}
+        _{\bm{n}}\mathbf{P}_{\bm{r}} \bm{=} \dfrac{\bm{n!}}{\bm{(n-r)}\bm{!}}
+        \label{eq:順列の総数②}
+    \end{align}
+\end{theorembox}
+\vspace{1em}
+
+Theorem\ref{thm:順列の総数②}が $r = 0, r = n$ のときも成り立つように, ${}_{\bm{n}}\mathbf{P}_{\bm{0}} \bm{= 1}$ , $\bm{0! = 1}$ と定めることとする.
+
+\newpage
+
+\begin{definitionbox}[def:円順列]{\textbf{円順列}}
+    \label{def:円順列}
+    いくつかのものを円形に並べる順列を \textbf{円順列} という.
+
+    円順列では, \uwave{回転して並びが同じになるものは同じ並び方とみなす}.
+\end{definitionbox}
+
+\begin{theorembox}[thm:円順列の総数]{\textbf{円順列の総数}}
+    \label{thm:円順列の総数}
+    異なる $n$ 個のものの円順列の総数について, 次のことがいえる.
+
+    \begin{align}
+        \dfrac{_{\bm{n}}\mathbf{P}_{\bm{n}}}{\bm{n}} \bm{= (n-1)!}
+        \label{eq:円順列の総数}
+    \end{align}
+\end{theorembox}
+
+% じゅず順列
+\vspace{1em}
+
+ここまでは, 異なるものだけを並べる順列を考えてきた. ここでは, 同じものを繰り返し使うことを許した場合の順列を考えてみよう.
+
+\begin{definitionbox}[def:重複順列]{\textbf{重複順列}}
+    \label{def:重複順列}
+    一般に, \uwave{異なる $n$ 種類のものから重複を許して $r$ 個取って} 並べる順列を
+    \bm{$n$} \textbf{個から} \bm{$r$} \textbf{個取る重複順列} という.
+
+    重複順列では, $r \leqq n$ とは限らず, $r > n$ であってもよい.
+\end{definitionbox}
+
+\begin{theorembox}[thm:重複順列の総数]{\textbf{重複順列の総数}}
+    \label{thm:重複順列の総数}
+    重複順列の総数について, 次のことがいえる.
+
+    \begin{align}
+        n \text{個から} r \text{個取る重複順列の総数は} \qquad \bm{n^r}
+        \label{eq:重複順列の総数}
+    \end{align}
+\end{theorembox}
+\newpage
+
+\subsection{組合せ}
+
+    \begin{theorembox}[thm:組合せ]{\textbf{組合せの総数}}
+        異なる $n$ 個のものから $r$ 個を選ぶ組合せの総数は次の式で表される.
+
+        \begin{align}
+            {}_n\mathrm{C}_r = \frac{{}_n\mathrm{P}_r}{r!} = \frac{n!}{r!(n-r)!}
+            \label{eq:組合せの総数}
+        \end{align}
+    \end{theorembox}
+
+    \begin{theorembox}[thm:組合せの性質]{\textbf{組合せの性質}}
+        次の等式が成り立つ.
+
+        \begin{align}
+            {}_n\mathrm{C}_r = {}_n\mathrm{C}_{n-r}
+            \label{eq:組合せの性質1}
+        \end{align}
+
+        \begin{align}
+            {}_n\mathrm{C}_r = {}_{n-1}\mathrm{C}_{r-1} + {}_{n-1}\mathrm{C}_r
+            \label{eq:組合せの性質2}
+        \end{align}
+    \end{theorembox}
+    \newpage
+

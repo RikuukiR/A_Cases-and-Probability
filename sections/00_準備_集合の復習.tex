@@ -1,0 +1,88 @@
+% 第0章 はじめにと準備
+
+% \pagewiselinenumbers  % linenoパッケージが必要
+
+数学という学問は定義の上で成り立っている. 定義は正しく覚えて, 内容をよく理解してほしい.\\
+
+第1章「場合の数と確率」では, 順列・組合せについて学んだ後, 偶然性を伴う現象を数学的に扱う確率の考え方について学んでもらう. 特に, 場面に応じて適切な事象に分割して考えることで, 系統的に確率を理解することを考察する.\\
+
+\newpage
+
+第1章に先立って, 第1章『場合の数と確率』で必要となる数学Iの『集合』の内容を復習しておく.
+
+\vskip\baselineskip
+
+「1から10までの自然数の集まり」というと, その集まりの範囲がはっきりしている. これに対し, 「大きい数の集まり」というと, その集まりの範囲が漠然としている.
+
+数学では, 範囲がはっきりしたものの集まりを集合といい, その集合を構成している1つ1つのものをその集合の要素という. 改めて,
+
+\begin{definitionbox}{}{\textbf{集合とその表し方}}
+明確に定められた条件を満たす対象の集まりを　\textbf{集合}　という. また, 集合を構成する個々の対象をその集合の　\textbf{要素}　という.
+\end{definitionbox}
+
+\vskip\baselineskip
+
+\begin{definitionbox}{}{\textbf{集合と要素の関係を表す記号}}
+集合 $X$ に対して $x$ が $X$ の要素であることを
+\[x \in X \quad または \quad X \ni x\]
+で表し, 　$x$\textbf{は} $X$ \textbf{の要素である}　または　$x$\textbf{は 集合} $X$ \textbf{に属する}　という.
+
+また, $y$ が $X$ の要素でないことを
+\[y \notin X \quad または \quad X \not\ni y\]
+と表す.
+\end{definitionbox}
+
+\vskip\baselineskip
+
+「1から10までの自然数の集まり」と「大きい数の集まり」では, どちらが集合として認められるかは簡単だろう. 言うまでもなく, 前者である.
+
+例えば, 1から10までの自然数のうち, 奇数全体の集合をPとすると, $P$は
+\[1, 3, 5, 7, 9, \]
+を要素とする集合である. この集合Pについては, 次が成り立つ.
+\[3 \in P, \quad 4 \notin P\]
+
+\begin{definitionbox}{}{\textbf{集合の表し方}}
+集合を構成するすべての要素を書き並べ, 書き並べた要素を　\textbf{｛　｝（中括弧）}　で囲み, その集合を表す. この集合の表し方を　\textbf{外延的記法}　という.
+
+一方, 要素の代表を例えば $x$ で表し, ｛　｝の中の縦線の右に, $x$ の満たす条件を書く方法もある. この集合の表し方を　\textbf{内延的記法}　という.
+\end{definitionbox}
+
+\vskip\baselineskip
+
+\begin{definitionbox}{}{\textbf{部分集合}}
+集合 $A , B$ において, $A$ のどの要素も $B$ の要素であるとき, すなわち,
+\[x \in A \quad \textbf{ならば} \quad x \in B\]
+が成り立つとき, $A$ は $B$ の　\textbf{部分集合である}　といい, 記号で
+\[A \subset B \quad または \quad B \supset A\]
+と表す.
+\end{definitionbox}
+
+\vskip\baselineskip
+
+\begin{definitionbox}{}{\textbf{共通部分と和集合}}
+2つの集合 $A , B$ に対して, $A$ と $B$ のどちらにも属する要素全体の集合を, $A$ と $B$の　\textbf{共通部分}　といい, $A \cap B$で表す.
+
+また, $A$ と $B$の少なくとも一方に属する要素全体の集合を$A$ と $B$の　\textbf{和集合}　といい, $A \cup B$　で表す.
+\end{definitionbox}
+
+\vskip\baselineskip
+
+\begin{definitionbox}{}{\textbf{補集合}}
+集合を考えるとき, 1つの集合 $U$ を最初に決めて, 要素としては $U$ の要素だけを, 集合としては $U$ の部分集合だけを考えることが多い. このとき, 集合 $U$ を　\textbf{全体集合}　という.
+
+また, 全体集合 $U$ の部分集合 $A$ に対して, $A$ に属さない $U$ の要素全体の集合を $U$ に関する $A$ の　\textbf{補集合}　といい, $\overline{ A }$　で表す.
+\end{definitionbox}
+
+\vskip\baselineskip
+
+\begin{theorembox}{}{\textbf{ド・モルガンの法則}}
+2つの集合 $A , B$ に対して, 次の法則が成り立つ.
+\begin{align*}
+\overline{A \cup B} &= \overline{A} \cap \overline{B}\\
+\overline{A\cap B} &= \overline{A} \cup \overline{B}
+\end{align*}
+\end{theorembox}
+
+\vskip\baselineskip
+\newpage
+

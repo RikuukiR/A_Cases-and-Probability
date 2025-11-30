@@ -1,0 +1,130 @@
+\documentclass[12pt,a4paper,titlepage]{jsreport}
+
+\usepackage[margin=20truemm]{geometry}
+
+\input{preamble.tex}
+
+\setcounter{chapter}{-1}
+
+\setcounter{tocdepth}{3}
+
+\usepackage{enumerate}
+
+\title{数学A}
+
+\author{Riku Sugawara}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\clearpage
+
+\chapter{はじめにと準備}
+
+% \pagewiselinenumbers  % linenoパッケージが必要な場合有効化
+
+数学という学問は定義の上で成り立っている．定義は正しく覚えて，内容をよく理解してほしい．\\
+
+第1章「場合の数と確率」では，順列・組合せについて学んだ後，偶然性を伴う現象を数学的に扱う確率の考え方について学んでもらう．特に，場面に応じて適切な事象に分割して考えることで，系統的に確率を理解することを考察する．\\
+
+第2章「図形の性質」では，三角形や円を含む図形に現れる線分の比について学んでもらう．また，作図の問題も考える．いろいろなゲームは，我々の使える手は限られているのが普通だが，作図の問題は，決められたルールで定規とコンパスだけを使うゲームである．\\
+
+第3章「数学と人間の活動」では，数学の考え方と人間の活動との関りについて学んでもらう．最初に，自然数の素因数分解の性質を復習し，2つの自然数の最大公約数を求めるユークリッドの互除法，記数法などについて学んでもらう．次に，座標の考え方や，ゲーム・パズルの中の数学について考える．\\
+
+\newpage
+
+第1章に先立って，第1章『場合の数と確率』で必要となる数学Iの『集合』の内容を復習しておく．
+
+\vskip\baselineskip
+
+「1から10までの自然数の集まり」というと，その集まりの範囲がはっきりしている．これに対し，「大きい数の集まり」というと，その集まりの範囲が漠然としている．
+
+数学では，範囲がはっきりしたものの集まりを集合といい，その集合を構成している1つ1つのものをその集合の要素という．改めて，
+
+\begin{definitionbox}{}{\textbf{集合とその表し方}}
+明確に定められた条件を満たす対象の集まりを　\textbf{集合}　という．また，集合を構成する個々の対象をその集合の　\textbf{要素}　という．
+\end{definitionbox}
+
+\vskip\baselineskip
+
+\begin{definitionbox}{}{\textbf{集合と要素の関係を表す記号}}
+集合 $X$ に対して $x$ が $X$ の要素であることを
+\[x \in X \quad または \quad X \ni x\]
+で表し，　$x$\textbf{は} $X$ \textbf{の要素である}　または　$x$\textbf{は 集合} $X$ \textbf{に属する}　という．
+
+また，$y$ が $X$ の要素でないことを
+\[y \notin X \quad または \quad X \not\ni y\]
+と表す．
+\end{definitionbox}
+
+\vskip\baselineskip
+
+「1から10までの自然数の集まり」と「大きい数の集まり」では，どちらが集合として認められるかは簡単だろう．言うまでもなく，前者である．
+
+例えば，1から10までの自然数のうち，奇数全体の集合をPとすると，$P$は
+\[1,3,5,7,9,\]
+を要素とする集合である．この集合Pについては，次が成り立つ．
+\[3 \in P, \quad 4 \notin P\]
+ここで，集合の表し方について確認しておこう．
+
+\begin{definitionbox}{}{\textbf{集合の表し方}}
+集合を構成するすべての要素を書き並べ，書き並べた要素を　\textbf{｛　｝（中括弧）}　で囲み，その集合を表す．また，要素が複数存在する場合，要素と要素を　\textbf{　，（コンマ）}　で区切り，それぞれの要素を区別できるようにする．この集合の表し方を　\textbf{外延的記法}　という．
+
+一方，　\textbf{要素}　の代表を例えば $x$ で表し，｛　｝の中の縦線の右に，$x$ の満たす　\textbf{条件}　を書く方法もある．この集合の表し方を　\textbf{内延的記法}　という．
+\end{definitionbox}
+
+\vskip\baselineskip
+
+今，$P$を1から10までの自然数のうち，奇数全体の集合とすると集合$P$は，外延的記法を用いて，
+\[P = \{1 , 3 , 5 , 7 , 9\}\]
+のように表せる．
+
+一方，集合$P$を内延的記法で表すと，
+\[P = \{\; x \;|\; x は1から10までの自然数\;\} =\{\; x \in \mathbb{ N }\;|\; 1 \leqq x \leqq 10 \;\}\]
+となる．
+
+また，$3$ は集合Pの要素であるが，$4$は集合Pの要素でない．つまり，$3 \in P, \quad 4 \notin P$であった．
+
+\vskip\baselineskip
+
+数学ではよく，数の集合を次のように表す．
+
+\begin{align*}
+\mathbb{ N } \quad &:\quad \textbf{自然数全体}からなる集合\\
+\mathbb{ Z } \quad &:\quad \textbf{整数全体}からなる集合\\
+\mathbb{ Q } \quad &:\quad \textbf{有理数全体}からなる集合\\
+\mathbb{ R } \quad &:\quad \textbf{実数全体}からなる集合\\
+\mathbb{ C } \quad &:\quad \textbf{複素数全体}からなる集合
+\end{align*}
+
+\begin{definitionbox}{}{\textbf{有限集合と無限集合}}
+有限個の要素からなる集合を　\textbf{有限集合}　といい，無限に多くの要素からなる集合を　\textbf{無限集合}　という．
+\end{definitionbox}
+
+\vskip\baselineskip
+
+上の例の$P$は有限集合であり，
+\[Q = \{\;x\;|\;xは20以上の自然数\;\}\]
+で定めた$Q$は無限集合である．
+
+% 以下, 集合の定義や定理が続く...
+
+\newpage
+
+\chapter{場合の数と確率}
+
+\section{場合の数}
+
+\input{sections/01_場合の数.tex}
+
+\section{確率}
+
+\input{sections/02_確率.tex}
+
+\end{document}
+

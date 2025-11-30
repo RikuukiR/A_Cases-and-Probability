@@ -1,0 +1,115 @@
+% 第２節 確率
+\section{確率}
+\subsection{事象と確率}
+
+    \begin{definitionbox}{}{\textbf{確率の定義}}
+        試行において, 起こりうるすべての場合が $n$ 通りあり, そのどの場合が起こることも同様に確からしいとする.
+        このとき, 事象 $A$ の起こる場合が $a$ 通りあるとすれば, 事象 $A$ の起こる\textbf{確率} $P(A)$ は次のように定義される.
+
+        \begin{align}
+            P(A) = \frac{a}{n}
+            \label{eq:確率の定義}
+        \end{align}
+    \end{definitionbox}
+
+\subsection{確率の基本性質}
+
+    \begin{theorembox}[thm:確率の基本性質]{\textbf{確率の基本性質}}
+        事象 $A$ の確率 $P(A)$ について, 次の性質が成り立つ.
+
+        \begin{align}
+            &0 \leq P(A) \leq 1
+            \label{eq:確率の範囲}\\
+            &P(U) = 1, \quad P(\emptyset) = 0
+            \label{eq:全事象と空事象}\\
+            &P(\bar{A}) = 1 - P(A)
+            \label{eq:余事象の確率}
+        \end{align}
+
+        ここで, $U$ は全事象, $\emptyset$ は空事象, $\bar{A}$ は事象 $A$ の余事象を表す.
+    \end{theorembox}
+
+% \subsection{確率の加法定理}
+
+    \begin{theorembox}[thm:確率の加法定理]{\textbf{確率の加法定理}}
+        2つの事象 $A$, $B$ について, 次が成り立つ.
+
+        \begin{align}
+            P(A \cup B) = P(A) + P(B) - P(A \cap B)
+            \label{eq:確率の加法定理}
+        \end{align}
+
+        特に, $A$ と $B$ が互いに排反である場合（$A \cap B = \emptyset$）, 次が成り立つ.
+
+        \begin{align}
+            P(A \cup B) = P(A) + P(B)
+            \label{eq:排反事象の確率}
+        \end{align}
+    \end{theorembox}
+
+\subsection{独立な試行と確率}
+
+    \begin{theorembox}[thm:独立な試行の確率]{\textbf{独立な試行の確率}}
+        2つの試行 $T_1$, $T_2$ が独立であるとき, 事象 $A$, $B$ について次が成り立つ.
+
+        \begin{align}
+            P(A \cap B) = P(A) \cdot P(B)
+            \label{eq:独立な試行の確率}
+        \end{align}
+    \end{theorembox}
+
+% \subsection{反復試行の確率}
+
+    \begin{theorembox}[thm:反復試行の確率]{\textbf{反復試行の確率}}
+        1回の試行で事象 $A$ が起こる確率を $p$ とする.
+        この試行を $n$ 回繰り返すとき, 事象 $A$ がちょうど $r$ 回起こる確率は次の式で表される.
+
+        \begin{align}
+            {}_n\mathrm{C}_r \cdot p^r \cdot (1-p)^{n-r}
+            \label{eq:反復試行の確率}
+        \end{align}
+    \end{theorembox}
+
+\subsection{条件付き確率}
+
+    \begin{definitionbox}{}{\textbf{条件付き確率}}
+        事象 $A$ が起こったという条件のもとで事象 $B$ が起こる\textbf{条件付き確率} $P_A(B)$ は次のように定義される.
+
+        \begin{align}
+            P_A(B) = \frac{P(A \cap B)}{P(A)} \quad (P(A) > 0)
+            \label{eq:条件付き確率}
+        \end{align}
+    \end{definitionbox}
+
+    \begin{theorembox}[thm:確率の乗法定理]{\textbf{確率の乗法定理}}
+        2つの事象 $A$, $B$ について, 次が成り立つ.
+
+        \begin{align}
+            P(A \cap B) = P(A) \cdot P_A(B)
+            \label{eq:確率の乗法定理}
+        \end{align}
+    \end{theorembox}
+
+
+    \subsection{期待値}
+
+    \begin{definitionbox}{}{\textbf{条件付き確率}}
+        事象 $A$ が起こったという条件のもとで事象 $B$ が起こる\textbf{条件付き確率} $P_A(B)$ は次のように定義される.
+
+        \begin{align}
+            P_A(B) = \frac{P(A \cap B)}{P(A)} \quad (P(A) > 0)
+            % \label{eq:条件付き確率}
+        \end{align}
+    \end{definitionbox}
+
+    \begin{theorembox}[thm:確率の乗法定理]{\textbf{確率の乗法定理}}
+        2つの事象 $A$, $B$ について, 次が成り立つ.
+
+        \begin{align}
+            P(A \cap B) = P(A) \cdot P_A(B)
+            % \label{eq:確率の乗法定理}
+        \end{align}
+    \end{theorembox}
+
+
+
