@@ -212,7 +212,7 @@
   \fi
 }
 
-% 太文字版の空欄コマンド
+% 太文字版の空欄コマンド（答えは青色で表示）
 \newcommand{\fitblankbf}[2][\relax]{%
   \ifx#1\relax
     % 答えが指定されていない場合（従来の使用法）
@@ -220,7 +220,7 @@
   \else
     % 答えが指定されている場合
     \ifshowanswer
-      \underline{\makebox[#2em][c]{\textbf{#1}}}%
+      \underline{\makebox[#2em][c]{\textcolor{blue}{\textbf{#1}}}}%
     \else
       \underline{\hspace*{#2em}}%
     \fi
@@ -287,6 +287,40 @@
 }
 
 % ========================================
+% テクニック環境（緑系：薄い緑背景 + 緑枠）
+% ========================================
+\newcounter{technique}
+\newtcolorbox{techniquebox}[2][]{
+    enhanced,
+    colback=green!5,
+    colframe=green!70!black,
+    boxrule=0.8pt,
+    sharp corners,
+    left=10pt, right=10pt, top=8pt, bottom=8pt,
+    fonttitle=\bfseries,
+    code={\refstepcounter{technique}\if\relax\detokenize{#1}\relax\else\label{#1}\fi},
+    title={Technique \thetechnique\if\relax\detokenize{#2}\relax\else\quad\textbf{#2}\fi}
+}
+
+% ========================================
+% インラインテクニックコマンド（数式環境内でも使用可能）
+% ========================================
+% シンプル版（数式内推奨）
+\newcommand{\tech}[1]{%
+    \textcolor{green!60!black}{\textit{（#1）}}%
+}
+
+% 強調版（通常テキスト用）
+\newcommand{\technique}[1]{%
+    \textcolor{green!70!black}{\textbf{【テクニック】}} #1%
+}
+
+% 背景色付き版（目立たせたい場合）
+\newcommand{\tip}[1]{%
+    \colorbox{yellow!20}{\textcolor{orange!70!black}{\textbf{💡}} #1}%
+}
+
+% ========================================
 % 手書き用空欄コマンド（下線なし, スペース確保）
 % ========================================
 
@@ -306,23 +340,46 @@
 
 % インライン用（テキスト・数式両用）
 % 使い方: \answertext{答え}
-% 空欄時: 答えの幅 + 両端に1em（1文字分）の余白
+% 空欄時: 答えの幅 + 両端に2em（2文字分）の余白（手書き用）
 \newcommand{\answertext}[1]{%
   \ifshowanswer
     \textcolor{blue}{#1}%  解答を青色で表示
   \else
-    \hspace{1em}\phantom{#1}\hspace{1em}%  空欄時は答えの幅 + 両端1em
+    \hspace{2em}\phantom{#1}\hspace{2em}%  空欄時は答えの幅 + 両端2em（手書き用）
   \fi
 }
 
 % 数式ブロック用（align環境など内部で使用）
 % 使い方: \answermath{数式}
-% 空欄時: 答えの幅 + 両端に2em（2文字分）の余白
+% 空欄時: 答えの幅 + 両端に3em（3文字分）の余白（手書き用）
 \newcommand{\answermath}[1]{%
   \ifshowanswer
     {\color{blue}#1}%  数式を青色で表示
   \else
-    \hspace{2em}\phantom{#1}\hspace{2em}%  空欄時は答えの幅 + 両端2em
+    \hspace{3em}\phantom{#1}\hspace{3em}%  空欄時は答えの幅 + 両端3em（手書き用）
+  \fi
+}
+
+% align環境全体を解答表示機能の対象にする環境
+% 使い方: \begin{alignanswer*} ... \end{alignanswer*}
+% 空欄時: 前後に空白を追加（手書き用）
+\NewEnviron{alignanswer*}{%
+  \ifshowanswer
+    \begingroup
+    \color{blue}%
+    \begin{align*}
+      \BODY
+    \end{align*}%
+    \endgroup
+  \else
+    \vspace{1em}%
+    \begingroup
+    \color{white}%
+    \begin{align*}
+      \BODY
+    \end{align*}%
+    \endgroup
+    \vspace{1em}%
   \fi
 }
 

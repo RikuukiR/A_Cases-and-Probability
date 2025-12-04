@@ -37,17 +37,19 @@
 \end{exercise}
 
     \begin{proof}\mbox{}\\
-        \indent(1)
-        \begin{align*}
-            _{10}\mathrm{P}_{3} &= 10 \cdot 9 \cdot 8 \\
+        (1) 10人の生徒から3人を選んで1列に並べる順列の総数であるから,
+
+        \begin{alignanswer*}
+            {}_{10}\mathrm{P}_{3} &= 10 \cdot 9 \cdot 8 \\
                                 &= 720 \quad \text{(通り)}
-        \end{align*}
+        \end{alignanswer*}
         \vspace{0.5em}
-        \indent(2)
-        \begin{align*}
-            _{7}\mathrm{P}_{4} &= 7 \cdot 6 \cdot 5 \cdot 4 \\
-                                &= 840 \quad \text{(通り)}
-        \end{align*}
+        (2) 7個の数字から4個を選んで並べる順列の総数であるから,
+
+        \begin{alignanswer*}
+            {}_{7}\mathrm{P}_{4} &= 7 \cdot 6 \cdot 5 \cdot 4 \\
+                            &= 840 \quad \text{(通り)}
+        \end{alignanswer*}
     \end{proof}
 \newpage
 
@@ -86,12 +88,12 @@ Definition\ref{def:順列}より, 一般に, 次のことがいえる.
 
 % 証明
 \begin{proof}\mbox{}\\
-    \begin{align}
+    \begin{align*}
         _{n}\mathrm{P}_{r} &= n (n-1) (n-2) \cdots \cdots 3 \cdot 2 \cdot 1\\
                         &= \dfrac{\,n (n-1) (n-2) \cdots \cdots (n-r+1) \bm{(n - r) \cdots \cdots 3 \cdot 2 \cdot 1}\,}
                         {\,\bm{(n - r) \cdots \cdots 3 \cdot 2 \cdot 1}\,} \\
                         &= \dfrac{\,\bm{n!}\,}{\,\bm{(n - r)!}\,}
-    \end{align}
+    \end{align*}
 \end{proof}
 
 
@@ -122,14 +124,13 @@ $^{*}$ ${}_n\mathrm{P}_r$ の P は 順列を意味するPermutation の頭文�
     12色の色鉛筆がある. A, B, C の3つの文字を, すべて異なる色で塗り分けるとき, 塗り方は何通りあるか.
 \end{exercise}
 
-    \begin{proof}\mbox{}
-
+    \begin{proof}\mbox{}\\
         12色の色鉛筆から3色を選んで1列に並べ左の色から順に, A, B, C と塗り分けると考えれば良いため,
 
-        \begin{align*}
-            _{12}\mathrm{P}_{3} &= 12 \cdot 11 \cdot 10 \\
+        \begin{alignanswer*}
+            {}_{12}\mathrm{P}_{3} &= 12 \cdot 11 \cdot 10 \\
                                 &= 1320 \quad \text{(通り)}
-        \end{align*}
+        \end{alignanswer*}
     \end{proof}
     \vspace{1em}
 
@@ -143,19 +144,43 @@ $^{*}$ ${}_n\mathrm{P}_r$ の P は 順列を意味するPermutation の頭文�
         \end{enumerate}
     \end{example}
 
-    \begin{proof}\mbox{}\\
-        \indent (1)
-    \end{proof}
-    \vspace{1em}
+    \begin{techniquebox}[tech:83]{\textbf{隣り合うものは合体させて、隣り合わないものは最後に挿入しよう！}}
+        「隣り合う」という条件が与えられれば、合体させたものについても、自身の \textbf{階乗通り} の合体方法があることに注意したい。
+
+        一方、「隣り合わない」という条件が与えられれば、それを \textbf{間または両端} に挿入することを考えよう!
+    \end{techniquebox}
 
     \begin{proof}\mbox{}\\
-        \indent (2)
+        (1) 両端の大人の並び方は、 $\answermath{{}_{4}\mathrm{P}_{2}}$ 通りある.
+
+        そのどの場合に対しても、間に並ぶ残りの5人の並び方は、$\answermath{5!}$ 通りある.
+
+        よって、並び方の総数は、\fitblankbf[積の法則]{8} により
+
+        \begin{alignanswer*}
+            {}_{4}\mathrm{P}_{2} \times 5! &= 12 \times 120 \\
+                                &= 1440 \quad \text{(通り)}
+        \end{alignanswer*}
+    \end{proof}
+
+    \begin{proof}\mbox{}\\
+        (2) 子ども3人をひとまとめにする。
+
+        大人4人とひとまとめにした子ども4人の並び方は、$\answermath{5!}$ 通りある.
+        そのどの場合に対しても、ひとまとめにした子ども3人の並び方は、$\answermath{3!}$ 通りある.
+
+        よって、並び方の総数は、\fitblankbf[積の法則]{8} により
+
+        \begin{alignanswer*}
+            5! \times 3! &= 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 \times 3 \cdot 2 \cdot 1 \\
+                                &= 720 \quad \text{(通り)}
+        \end{alignanswer*}
     \end{proof}
     \vspace{1em}
-
+\newpage
 
 % 応用例題5
-\begin{example}[【教p.27 応用例題4】]
+\begin{example}[【教p.27 応用例題5】]
     6個の数字 0, 1, 2, 3, 4, 5 のうちの異なる4個を並べて,4桁の整数を作るとき,次のような整数は何個作れるか。
     \begin{enumerate}
         \item 4桁の整数
@@ -163,30 +188,41 @@ $^{*}$ ${}_n\mathrm{P}_r$ の P は 順列を意味するPermutation の頭文�
     \end{enumerate}
 \end{example}
 
-\begin{proof}\mbox{}\\
-    \indent (1)
-\end{proof}
-\vspace{1em}
+\begin{techniquebox}[tech:79]{\textbf{場合の数・確率の問題は、いかに状況を整理するかを考えよ！}}
+    「どのように場合分けすればよいか」「この条件は、要はどういうことなのか」などを、\textbf{実験を通して} 考えよう。
+
+    １つの方針として、\textbf{制限のあるもの} から考える、というものがある。
+\end{techniquebox}
 
 \begin{proof}\mbox{}\\
-    \indent (2)
+    (1)千の位は、0以外の数字 1, 2, 3, 4, 5 のどれかであるから、その選び方は $\answermath{5}$ 通りある。
+
+    そのどの場合に対しても、百、十、一の位には、残りの5個の数字から3個取って並べるから、
+    その並び方は $\answermath{_{5}\mathrm{P}_{3}}$ 通りある。
+
+    よって、求める個数は、積の法則により
+
+    \begin{alignanswer*}
+        5 \times {}_{5}\mathrm{P}_{3} &= 5 \times 5 \cdot 4 \cdot 3 \\
+                                &= 300 \quad \text{(個)}
+    \end{alignanswer*}
 \end{proof}
-\vspace{1em}
 
+\begin{proof}\mbox{}\\
+    (2) 一の位は、数字 1, 3, 5 のどれかであるから、その選び方は $\answermath{3}$ 通りある。
 
+    そのどの場合に対しても、千の位は、0 と一の位の数字以外の4個の数字のどれかであるから、その選び方は $\answermath{4}$ 通りある。
 
+    さらに、百、十の位には、残りの4個の数字から2個取って並べるから、その \uwave{並べ方}は $\answermath{_{4}\mathrm{P}_{2}}$ 通りある。
 
+    よって、求める個数は、積の法則により
 
-
-
-
-
-
-
-
-
-
-
+    \begin{alignanswer*}
+        3 \times 4 \times {}_{4}\mathrm{P}_{2} &= 3 \times 4 \times 4 \cdot 3 \\
+                                &= 144 \quad \text{(個)}
+    \end{alignanswer*}
+\end{proof}
+\newpage
 
 \begin{definitionbox}[def:円順列]{\textbf{円順列}}
     いくつかのものを円形に並べる順列を \textbf{円順列} という.
@@ -204,23 +240,22 @@ $^{*}$ ${}_n\mathrm{P}_r$ の P は 順列を意味するPermutation の頭文�
         \label{eq:円順列の総数}
     \end{align}
 \end{theorembox}
-\vspace{1em}
 
 % 練習19
 \begin{exercise}[【教p.29 練習19】]
     色の異なる6個の玉を円形に並べて置くとき, 並べ方の総数を求めよ.
 \end{exercise}
 
-    \begin{proof}\mbox{}
+\begin{techniquebox}[tech:86]{\textbf{円順列は、1箇所を固定して考えよ！}}
+    ある1箇所を固定してしまえば、残りの箇所は \textbf{区別できるようになる} ため、今までの順列の問題と同様に処理することができる。
+\end{techniquebox}
 
-        % 12色の色鉛筆から3色を選んで1列に並べ左の色から順に、A, B, C と塗り分けると考えれば良いため、
-
-        % \begin{align*}
-        %     _{12}\mathrm{P}_{3} &= 12 \cdot 11 \cdot 10 \\
-        %                          &= 1320 \quad \text{(通り)}
-        % \end{align*}
+    \begin{proof}\mbox{}\\
+        \begin{alignanswer*}
+            (6-1)! &= 5! \\
+                    &= 120 \quad \text{(通り)}
+        \end{alignanswer*}
     \end{proof}
-\vspace{1em}
 
 % 応用例題6
 \begin{example}[【教p.29 応用例題6】]
@@ -228,9 +263,21 @@ $^{*}$ ${}_n\mathrm{P}_r$ の P は 順列を意味するPermutation の頭文�
     \end{example}
 
     \begin{proof}\mbox{}\\
-        \indent
+        先生が円形に並んで、間に生徒が並んでいくと考えればよい。先生が円形に並んでから特定の生徒を基準にすると、
+        間に入る生徒の並び方は、1列に並ぶ順列と考えることができる。
+
+        先生4人の円順列の総数は、$\answermath{(4-1)!}$ 通りある。
+
+        そのどの場合に対しても、生徒4人が先生の間に1人ずつ並ぶ方法は、$\answermath{4!}$ 通りある。
+
+        よって、求める並び方の総数は、積の法則により
+
+        \begin{alignanswer*}
+            (4-1)! \times 4! &= 3 \cdot 2 \cdot 1 \times 4 \cdot 3 \cdot 2 \cdot 1 \\
+                                &= 144 \quad \text{(通り)}
+        \end{alignanswer*}
     \end{proof}
-    \vspace{1em}
+\newpage
 
 % じゅず順列
 % \vspace{1em}
@@ -253,7 +300,6 @@ $^{*}$ ${}_n\mathrm{P}_r$ の P は 順列を意味するPermutation の頭文�
         \label{eq:重複順列の総数}
     \end{align}
 \end{theorembox}
-\vspace{1em}
 
 % 練習22
 \begin{exercise}[【教p.30 練習22】]
@@ -265,12 +311,20 @@ $^{*}$ ${}_n\mathrm{P}_r$ の P は 順列を意味するPermutation の頭文�
 \end{exercise}
 
 \begin{proof}\mbox{}\\
-    \indent (1)
+    (1) 4個から2個取る重複順列であるから、
+
+    \begin{alignanswer*}
+        4^2 &= 16 \quad \text{(通り)}
+    \end{alignanswer*}
 \end{proof}
 \vspace{1em}
 
 \begin{proof}\mbox{}\\
-    \indent (2)
+    (2) 4個から3個取る重複順列であるから、
+
+    \begin{alignanswer*}
+        4^3 &= 64 \quad \text{(通り)}
+    \end{alignanswer*}
 \end{proof}
 \vspace{1em}
 \newpage
@@ -289,27 +343,27 @@ $^{*}$ ${}_n\mathrm{P}_r$ の P は 順列を意味するPermutation の頭文�
 
 ここで, Permutation と Combination の違いを確認しておこう.
 
-まずは, 日本語の意味の違いから. Permutation は「順列」, Combination は「組合せ」である.
+まずは, 日本語の意味の違いから. Permutation は「\textbf{順列}」, Combination は「\textbf{組合せ}」である.
 
 次に, 数学的な視点から, Permutation と Combination の違いを考えてみよう.
 
 % 証明
-例えば, 5個から3個取る組合せの総数は ${}_5\mathrm{C}_{3}$ で表され, それは 10 (通り) であるが, これを順列の総数から考えてみよう.
+例えば, 5個から3個取る組合せの総数は ${}_5\mathrm{C}_{3}$ で表され, それは \uwave{\text{10 (通り)}} であるが, これを順列の総数から考えてみよう.
 
 5個から3個取る順列の総数 ${}_5\mathrm{P}_{3}$ は, 次のように考えることもできる.
 
-\[5個から3個取る組合せを作り, ({}_5\mathrm{C}_{3} \quad \text{通り})\]
-\[取り出した3個すべてを1列に並べる(3! \quad \text{通り})\]
+\[\text{5個から3個取る組合せを作り, }(\answermath{{}_5\mathrm{C}_{3}} \text{ 通り})\]
+\[\text{取り出した3個すべてを1列に並べる}(\answermath{3!} \text{ 通り})\]
 
 よって, 積の法則により, 次の等式が成り立つ.
 
-\[{}_5\mathrm{C}_{3} \times 3! = {}_5\mathrm{P}_{3}\]
+\[\answermath{{}_5\mathrm{C}_{3}} \times \answermath{3!} = \answermath{{}_5\mathrm{P}_{3}}\]
 
-したがって, ${}_5\mathrm{C}_{3}  = \dfrac{\,{}_5\mathrm{P}_{3}\,}{\,3!\,} = \dfrac{\,5 \cdot 4 \cdot 3\,}{\,3 \cdot 2 \cdot 1\,} = 10$ （通り）
+したがって, $\answermath{{}_5\mathrm{C}_{3}}  = \dfrac{\,\answermath{{}_5\mathrm{P}_{3}\,}}{\,\answermath{3!\,}}
+= \dfrac{\,5 \cdot 4 \cdot 3\,}{\,3 \cdot 2 \cdot 1\,} = \uwave{10}$ \uwave{（通り）}
 \vspace{1em}
 
 これを一般化したものを次に示す.
-\vspace{1em}
 
 \begin{theorembox}[thm:組合せの総数]{\textbf{組合せの総数 $_{\bm{n}}\mathbf{C}_{\bm{r}}$}}
     $n$ 個から $r$ 個取る組合せの総数 $_{n}\mathrm{C}_{r}$ は次の式で表される.
@@ -324,9 +378,17 @@ $^{*}$ ${}_n\mathrm{P}_r$ の P は 順列を意味するPermutation の頭文�
 
 Theorem\ref{eq:組合せの総数}において, 特に ${}_n\mathrm{C}_1 = n$ , ${}_n\mathrm{C}_n = 1$ である.
 
-また, 式\ref{eq:順列の総数②}より, ${}_{\bm{n}}\mathbf{C}_{\bm{r}} \bm{=} \dfrac{\,\bm{n!}\,}{\,\bm{r!(n-r)!}\,}$
-と表すこともできる. ただし, ${}_{\bm{n}}\mathbf{C}_{\bm{0}} \bm{=} 1$ と定めることとする.
+また, 式\ref{eq:順列の総数②}より,
+
+\begin{align*}
+    {}_n\mathrm{C}_r &= \dfrac{\,{}_n\mathrm{P}_r\,}{\,r!\,} && \text{（ $\because$ 式\ref{eq:組合せの総数}）}\\
+                    &=  \dfrac{\dfrac{\,n!\,}{\,(n-r)!\,}}{\;r!\;} && \text{（ $\because$ 式\ref{eq:順列の総数②}）}\\
+                    &= \answermath{\dfrac{\;n!\;}{\;r!\;(n - r)!\;}}
+\end{align*}
 \vspace{1em}
+
+と表すこともできる。ただし、${}_n\mathrm{C}_0 = 1$ と定めることとする。
+\newpage
 
 % 練習24
 \begin{exercise}[【教p.33 練習24】]
@@ -338,26 +400,28 @@ Theorem\ref{eq:組合せの総数}において, 特に ${}_n\mathrm{C}_1 = n$ , 
 \end{exercise}
 
     \begin{proof}\mbox{}\\
-        \indent(1)
-        \begin{align*}
+        (1) 8個から2個取る組合せであるから、
+
+        \begin{alignanswer*}
             _{8}\mathrm{C}_{2} &= \dfrac{\,8 \cdot 7\,}{\,2 \cdot 1\,} \\
                                 &= 28 \quad \text{(通り)}
-        \end{align*}
-        \vspace{0.5em}
-        \indent(2)
-        \begin{align*}
+        \end{alignanswer*}
+    \end{proof}
+
+    \begin{proof}\mbox{}\\
+        (2) 7個から4個取る組合せであるから、
+
+        \begin{alignanswer*}
             _{7}\mathrm{C}_{4} &= \dfrac{\,7 \cdot 6 \cdot 5 \cdot 4\,}{\,4 \cdot 3 \cdot 2 \cdot 1\,} \\
                                 &= 35 \quad \text{(通り)}
-        \end{align*}
+        \end{alignanswer*}
     \end{proof}
-    \vspace{1em}
 
-練習24(1)において, 8人から2人選ぶことは, 選ばない6人を選ぶことと同じである.
+練習24(1)において, 8人から2人選ぶことは, 選ばない6人を選ぶことと同じである。
 
-よって, 次の等式が成り立つ.
+よって, 次の等式が成り立つ。
 
-\[_{8}\mathrm{C}_{2} = _{8}\mathrm{C}_{6}\]
-\vspace{1em}
+\[{}_{8}\mathrm{C}_{2} = \answermath{{}_{8}\mathrm{C}_{6}}\]
 
 これを一般化したものを次に示す.
 
@@ -368,7 +432,7 @@ Theorem\ref{eq:組合せの総数}において, 特に ${}_n\mathrm{C}_1 = n$ , 
         {}_{\bm{n}}\mathbf{C}_{\bm{r}} \bm{=} {}_{\bm{n}}\mathbf{C}_{\bm{n-r}}
     \end{align}
 \end{theorembox}
-\vspace{1em}
+\newpage
 
 % 練習26
 \begin{exercise}[【教p.34 練習26】]
@@ -376,30 +440,26 @@ Theorem\ref{eq:組合せの総数}において, 特に ${}_n\mathrm{C}_1 = n$ , 
     \begin{enumerate}
         \item 3個の頂点を結んでできる三角形の個数
         \item 2個の頂点を結ぶ線分の本数
-        \item 対角線の本数
     \end{enumerate}
 \end{exercise}
 
     \begin{proof}\mbox{}\\
-        \indent(1)
-        \begin{align*}
-            _{6}\mathrm{C}_{3} &= \dfrac{\,6 \cdot 5 \cdot 4\,}{\,3 \cdot 2 \cdot 1\,} \\
+        (1) 6個の頂点はどの3点も一直線上にないから、3個の点を1組決めると三角形を1個作ることができる。
+
+        \begin{alignanswer*}
+            _{6}\mathrm{C}_{3} &= \dfrac{\answermath{6 \cdot 5 \cdot 4}}{\answermath{3 \cdot 2 \cdot 1}} \\
                                 &= 20 \quad \text{(個)}
-        \end{align*}
-        \vspace{0.5em}
-        \indent(2)
-        \begin{align*}
-            _{6}\mathrm{C}_{2} &= \dfrac{\,6 \cdot 5\,}{\,2 \cdot 1\,} \\
-                                &= 15 \quad \text{(本)}
-        \end{align*}
-        \vspace{0.5em}
-        \indent(3)
-        \begin{align*}
-            _{6}\mathrm{C}_{4} &= \dfrac{\,6 \cdot 5 \cdot 4 \cdot 3\,}{\,4 \cdot 3 \cdot 2 \cdot 1\,} \\
-                                &= 9 \quad \text{(本)}
-        \end{align*}
+        \end{alignanswer*}
     \end{proof}
-    \vspace{1em}
+
+    \begin{proof}\mbox{}\\
+        (2) 6個の頂点それぞれに対して、相方の点を1個決めると2個の頂点を結ぶ線分を1本作ることができる。
+
+        \begin{alignanswer*}
+            _{6}\mathrm{C}_{2} &= \dfrac{\answermath{6 \cdot 5}}{\answermath{2 \cdot 1}} \\
+                                &= 15 \quad \text{(本)}
+        \end{alignanswer*}
+    \end{proof}
 
 % 応用例題7
 \begin{example}[【教p.35 応用例題7】]
@@ -410,13 +470,44 @@ Theorem\ref{eq:組合せの総数}において, 特に ${}_n\mathrm{C}_1 = n$ , 
     \end{enumerate}
 \end{example}
 
-\begin{proof}\mbox{}\\
-    \indent (1)
-\end{proof}
-\vspace{1em}
+\begin{techniquebox}[tech:80]{\textbf{場合の数・確率の問題では、常に余事象を疑え！}}
+    \textbf{「少なくとも〜」というキーワードがあれば}、余事象は限られるため容易に疑える。
+
+    しかし、\textbf{そのようなキーワードがなくとも余事象を考えたほうが楽な場合も多い} ため、余事象を疑うことを習慣化しよう。
+\end{techniquebox}
+\newpage
 
 \begin{proof}\mbox{}\\
-    \indent (2)
+    (1) 大人と子どもを別々に選び、積の法則を用いて求めたい。
+
+    大人3人の選び方は、$\answermath{{}_{6}\mathrm{C}_{3}}$ 通りある。
+
+    そのどの場合に対しても、子ども2人の選び方は、$\answermath{{}_{4}\mathrm{C}_{2}}$ 通りある。
+
+    よって、求める選び方の総数は、積の法則により
+
+    \begin{alignanswer*}
+        {}_{6}\mathrm{C}_{3} \times {}_{4}\mathrm{C}_{2} &= \dfrac{\answermath{6 \cdot 5 \cdot 4}}{\answermath{3 \cdot 2 \cdot 1}}
+        \times \dfrac{\answermath{4 \cdot 3}}{\answermath{2 \cdot 1}} \\
+                                &= 120 \quad \text{(通り)}
+    \end{alignanswer*}
+\end{proof}
+
+\begin{proof}\mbox{}\\
+    (2) 「少なくとも1人」は「1人以上」という意味である。したがって、余事象が「 \answertext{\textbf{0人}} 」と限定されるためこれを利用する。
+
+    10人から5人の選び方は、$\answermath{{}_{10}\mathrm{C}_{5}}$ 通りある。
+
+    子どもが1人も選ばれず、5人とも大人となる選び方は、$\answermath{{}_{6}\mathrm{C}_{5}}$ 通りある。
+
+    よって、求める選び方の総数は
+
+    \begin{alignanswer*}
+        {}_{10}\mathrm{C}_{5} - {}_{6}\mathrm{C}_{5} &= {}_{10}\mathrm{C}_{5} - {}_{6}\mathrm{C}_{1}\\
+                        &= \dfrac{\answermath{10 \cdot 9 \cdot 8 \cdot 7 \cdot 6}}{\answermath{5 \cdot 4 \cdot 3 \cdot 2 \cdot 1}} - 6\\
+                                &= 252 - 6 \\
+                                &= 246 \quad \text{(通り)}
+    \end{alignanswer*}
 \end{proof}
 \vspace{1em}
 
@@ -430,12 +521,12 @@ Theorem\ref{eq:組合せの総数}において, 特に ${}_n\mathrm{C}_1 = n$ , 
 \end{example}
 
 \begin{proof}\mbox{}\\
-    \indent (1)
+    (1)
 \end{proof}
 \vspace{1em}
 
 \begin{proof}\mbox{}\\
-    \indent (2)
+    (2)
 \end{proof}
 \vspace{1em}
 \newpage

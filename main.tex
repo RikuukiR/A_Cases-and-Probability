@@ -12,10 +12,12 @@
 % 定理・定義番号をsubsectionごとにリセット
 \numberwithin{theorem}{subsection}
 \numberwithin{definition}{subsection}
+\numberwithin{technique}{subsection}
 
 % 定理番号を「1.3.1」形式に
 \renewcommand{\thetheorem}{\arabic{section}.\arabic{subsection}.\arabic{theorem}}
 \renewcommand{\thedefinition}{\arabic{section}.\arabic{subsection}.\arabic{definition}}
+\renewcommand{\thetechnique}{\arabic{section}.\arabic{subsection}.\arabic{technique}}
 
 % カウンターの初期値を1に設定（0から始まるのを防ぐ）
 \setcounter{section}{0}
@@ -47,9 +49,9 @@
 
 % \input{sections/00_準備_集合の復習.tex}
 
-% \input{sections/01_場合の数.tex}
+\input{sections/01_場合の数.tex}
 
-\input{sections/02_確率.tex}
+% \input{sections/02_確率.tex}
 
 \end{document}
 
