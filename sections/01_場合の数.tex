@@ -9,7 +9,6 @@
 \subsection{順列}
 % 順列
 \begin{definitionbox}[def:順列]{\textbf{順列}}
-    \label{def:順列}
     いくつかのものを順に1列に並べるとき, その並びの1つ1つを \textbf{順列} という.
 
     一般に, \uwave{異なる $n$ 個のものから異なる $r$ 個を取り出して}並べる順列を
@@ -20,7 +19,6 @@
 \end{definitionbox}
 
 \begin{theorembox}[thm:順列の総数①]{\textbf{順列の総数① $_{\bm{n}}\mathbf{P}_{\bm{r}}$}}
-    \label{thm:順列の総数①}
     $n$ 個から $r$ 個取る順列の総数 $_{n}\mathrm{P}_{r}$ は次の式で表される.
 
     \begin{align}
@@ -28,7 +26,31 @@
         \label{eq:順列の総数①}
     \end{align}
 \end{theorembox}
-\vspace{1em}
+
+% 練習14
+\begin{exercise}[【教p.24 練習14】]
+    次のものの総数を求めよ．
+    \begin{enumerate}
+        \item 10人の生徒から3人を選んで1列に並べるときの並び順
+        \item 7個の数字 1, 2, 3, 4, 5, 6, 7 のうちの異なる4個を並べて作る4桁の整数
+    \end{enumerate}
+\end{exercise}
+
+    \begin{proof}\mbox{}\\
+        \indent(1)
+        \begin{align*}
+            _{10}\mathrm{P}_{3} &= 10 \cdot 9 \cdot 8 \\
+                                &= 720 \quad \text{(通り)}
+        \end{align*}
+        \vspace{0.5em}
+        \indent(2)
+        \begin{align*}
+            _{7}\mathrm{P}_{4} &= 7 \cdot 6 \cdot 5 \cdot 4 \\
+                                &= 840 \quad \text{(通り)}
+        \end{align*}
+    \end{proof}
+\newpage
+
 
 順列の総数 ${}_n\mathrm{P}_r$ の式で, 特に $r = n$ のときは等式
 
@@ -40,25 +62,12 @@
 
 % 階乗
 \begin{definitionbox}[def:階乗]{\textbf{階乗}}
-    \label{def:階乗}
     $(*)$ の右辺は, $1$ から $n$ までのすべての自然数の積である.
 
     これを $n$ の \textbf{階乗} といい, $\bm{n!}$ で表す.
 \end{definitionbox}
 
-
-\vfill
-
-\noindent
-\rule{\textwidth}{0.4pt}
-
-\noindent
-$^{*}$ ${}_n\mathrm{P}_r$ の P は 順列を意味するPermutation の頭文字である.\\
-
-\newpage
-
 \begin{theorembox}[thm:階乗]{\textbf{階乗}}
-    \label{thm:階乗}
     Definition\ref{def:階乗} より, $n$ の階乗 $n!$ は次の式で表される.
 
     \begin{align}
@@ -76,10 +85,17 @@ Definition\ref{def:順列}より, 一般に, 次のことがいえる.
 \vspace{1em}
 
 % 証明
+\begin{proof}\mbox{}\\
+    \begin{align}
+        _{n}\mathrm{P}_{r} &= n (n-1) (n-2) \cdots \cdots 3 \cdot 2 \cdot 1\\
+                        &= \dfrac{\,n (n-1) (n-2) \cdots \cdots (n-r+1) \bm{(n - r) \cdots \cdots 3 \cdot 2 \cdot 1}\,}
+                        {\,\bm{(n - r) \cdots \cdots 3 \cdot 2 \cdot 1}\,} \\
+                        &= \dfrac{\,\bm{n!}\,}{\,\bm{(n - r)!}\,}
+    \end{align}
+\end{proof}
 
 
 \begin{theorembox}[thm:順列の総数②]{\textbf{順列の総数② $_{\bm{n}}\mathbf{P}_{\bm{r}}$}}
-    \label{thm:順列の総数②}
 
     \begin{align}
         _{\bm{n}}\mathbf{P}_{\bm{r}} \bm{=} \dfrac{\,\bm{n!}\,}{\,\bm{(n-r)}\bm{!}\,}
@@ -90,17 +106,97 @@ Definition\ref{def:順列}より, 一般に, 次のことがいえる.
 
 Theorem\ref{thm:順列の総数②}が $r = 0, r = n$ のときも成り立つように, ${}_{\bm{n}}\mathbf{P}_{\bm{0}} \bm{= 1}$ , $\bm{0! = 1}$ と定めることとする.
 
+
+\vfill
+
+\noindent
+\rule{\textwidth}{0.4pt}
+
+\noindent
+$^{*}$ ${}_n\mathrm{P}_r$ の P は 順列を意味するPermutation の頭文字である.\\
+
 \newpage
 
+% 練習16
+\begin{exercise}[【教p.25 練習16】]
+    12色の色鉛筆がある. A, B, C の3つの文字を, すべて異なる色で塗り分けるとき, 塗り方は何通りあるか.
+\end{exercise}
+
+    \begin{proof}\mbox{}
+
+        12色の色鉛筆から3色を選んで1列に並べ左の色から順に, A, B, C と塗り分けると考えれば良いため,
+
+        \begin{align*}
+            _{12}\mathrm{P}_{3} &= 12 \cdot 11 \cdot 10 \\
+                                &= 1320 \quad \text{(通り)}
+        \end{align*}
+    \end{proof}
+    \vspace{1em}
+
+% テクニック
+% 応用例題4
+    \begin{example}[【教p.26 応用例題4】]
+        大人4人と子ども3人が1列に並ぶとき, 次のような並び方は何通りあるか.
+        \begin{enumerate}
+            \item 両端が大人である.
+            \item 子どもが3人続いて並ぶ.
+        \end{enumerate}
+    \end{example}
+
+    \begin{proof}\mbox{}\\
+        \indent (1)
+    \end{proof}
+    \vspace{1em}
+
+    \begin{proof}\mbox{}\\
+        \indent (2)
+    \end{proof}
+    \vspace{1em}
+
+
+% 応用例題5
+\begin{example}[【教p.27 応用例題4】]
+    6個の数字 0, 1, 2, 3, 4, 5 のうちの異なる4個を並べて,4桁の整数を作るとき,次のような整数は何個作れるか。
+    \begin{enumerate}
+        \item 4桁の整数
+        \item 4桁の奇数
+    \end{enumerate}
+\end{example}
+
+\begin{proof}\mbox{}\\
+    \indent (1)
+\end{proof}
+\vspace{1em}
+
+\begin{proof}\mbox{}\\
+    \indent (2)
+\end{proof}
+\vspace{1em}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \begin{definitionbox}[def:円順列]{\textbf{円順列}}
-    \label{def:円順列}
     いくつかのものを円形に並べる順列を \textbf{円順列} という.
 
     円順列では, \uwave{回転して並びが同じになるものは同じ並び方とみなす}.
 \end{definitionbox}
 
+% テクニック
+
 \begin{theorembox}[thm:円順列の総数]{\textbf{円順列の総数}}
-    \label{thm:円順列の総数}
     異なる $n$ 個のものの円順列の総数について, 次のことがいえる.
 
     \begin{align}
@@ -108,15 +204,41 @@ Theorem\ref{thm:順列の総数②}が $r = 0, r = n$ のときも成り立つ�
         \label{eq:円順列の総数}
     \end{align}
 \end{theorembox}
+\vspace{1em}
+
+% 練習19
+\begin{exercise}[【教p.29 練習19】]
+    色の異なる6個の玉を円形に並べて置くとき, 並べ方の総数を求めよ.
+\end{exercise}
+
+    \begin{proof}\mbox{}
+
+        % 12色の色鉛筆から3色を選んで1列に並べ左の色から順に、A, B, C と塗り分けると考えれば良いため、
+
+        % \begin{align*}
+        %     _{12}\mathrm{P}_{3} &= 12 \cdot 11 \cdot 10 \\
+        %                          &= 1320 \quad \text{(通り)}
+        % \end{align*}
+    \end{proof}
+\vspace{1em}
+
+% 応用例題6
+\begin{example}[【教p.29 応用例題6】]
+        先生4人と生徒4人が輪の形に並ぶとき, 先生と生徒が交互に並ぶような並び方は何通りあるか。
+    \end{example}
+
+    \begin{proof}\mbox{}\\
+        \indent
+    \end{proof}
+    \vspace{1em}
 
 % じゅず順列
-\vspace{1em}
+% \vspace{1em}
 
 ここまでは, 異なるものだけを並べる順列を考えてきた. ここでは, 同じものを繰り返し使うことを許した場合の順列を考えてみよう.
 
 % 重複順列
 \begin{definitionbox}[def:重複順列]{\textbf{重複順列}}
-    \label{def:重複順列}
     一般に, \uwave{異なる $n$ 種類のものから重複を許して $r$ 個取って} 並べる順列を
     \bm{$n$} \textbf{個から} \bm{$r$} \textbf{個取る重複順列} という.
 
@@ -124,7 +246,6 @@ Theorem\ref{thm:順列の総数②}が $r = 0, r = n$ のときも成り立つ�
 \end{definitionbox}
 
 \begin{theorembox}[thm:重複順列の総数]{\textbf{重複順列の総数}}
-    \label{thm:重複順列の総数}
     重複順列の総数について, 次のことがいえる.
 
     \begin{align}
@@ -132,13 +253,32 @@ Theorem\ref{thm:順列の総数②}が $r = 0, r = n$ のときも成り立つ�
         \label{eq:重複順列の総数}
     \end{align}
 \end{theorembox}
+\vspace{1em}
+
+% 練習22
+\begin{exercise}[【教p.30 練習22】]
+    4個の文字 a, b, c, d を, 重複を許して次の個数だけ1列に並べるとき, 何通りの文字列が作れるか。
+    \begin{enumerate}
+        \item 2個
+        \item 3個
+    \end{enumerate}
+\end{exercise}
+
+\begin{proof}\mbox{}\\
+    \indent (1)
+\end{proof}
+\vspace{1em}
+
+\begin{proof}\mbox{}\\
+    \indent (2)
+\end{proof}
+\vspace{1em}
 \newpage
 
 \subsection{組合せ}
 
-% 組合わせ
+% 組合せ
 \begin{definitionbox}[def:組合せ]{\textbf{組合せ}}
-    \label{def:組合せ}
     一般に, \uwave{異なる $n$ 個のものから異なる $r$ 個を取り出して} 作る組合せを
     \begin{center}
         $\bm{n}$\textbf{個から}$\bm{r}$\textbf{個取る組合せ}
@@ -153,20 +293,22 @@ Theorem\ref{thm:順列の総数②}が $r = 0, r = n$ のときも成り立つ�
 
 次に, 数学的な視点から, Permutation と Combination の違いを考えてみよう.
 
+% 証明
+例えば, 5個から3個取る組合せの総数は ${}_5\mathrm{C}_{3}$ で表され, それは 10 (通り) であるが, これを順列の総数から考えてみよう.
 
+5個から3個取る順列の総数 ${}_5\mathrm{P}_{3}$ は, 次のように考えることもできる.
 
+\[5個から3個取る組合せを作り, ({}_5\mathrm{C}_{3} \quad \text{通り})\]
+\[取り出した3個すべてを1列に並べる(3! \quad \text{通り})\]
 
+よって, 積の法則により, 次の等式が成り立つ.
 
+\[{}_5\mathrm{C}_{3} \times 3! = {}_5\mathrm{P}_{3}\]
 
+したがって, ${}_5\mathrm{C}_{3}  = \dfrac{\,{}_5\mathrm{P}_{3}\,}{\,3!\,} = \dfrac{\,5 \cdot 4 \cdot 3\,}{\,3 \cdot 2 \cdot 1\,} = 10$ （通り）
+\vspace{1em}
 
-
-
-
-
-
-
-
-
+これを一般化したものを次に示す.
 \vspace{1em}
 
 \begin{theorembox}[thm:組合せの総数]{\textbf{組合せの総数 $_{\bm{n}}\mathbf{C}_{\bm{r}}$}}
@@ -186,6 +328,39 @@ Theorem\ref{eq:組合せの総数}において, 特に ${}_n\mathrm{C}_1 = n$ , 
 と表すこともできる. ただし, ${}_{\bm{n}}\mathbf{C}_{\bm{0}} \bm{=} 1$ と定めることとする.
 \vspace{1em}
 
+% 練習24
+\begin{exercise}[【教p.33 練習24】]
+    次のような選び方の総数を求めよ.
+    \begin{enumerate}
+        \item 8人から2人を選ぶ
+        \item 7色から4色を選ぶ
+    \end{enumerate}
+\end{exercise}
+
+    \begin{proof}\mbox{}\\
+        \indent(1)
+        \begin{align*}
+            _{8}\mathrm{C}_{2} &= \dfrac{\,8 \cdot 7\,}{\,2 \cdot 1\,} \\
+                                &= 28 \quad \text{(通り)}
+        \end{align*}
+        \vspace{0.5em}
+        \indent(2)
+        \begin{align*}
+            _{7}\mathrm{C}_{4} &= \dfrac{\,7 \cdot 6 \cdot 5 \cdot 4\,}{\,4 \cdot 3 \cdot 2 \cdot 1\,} \\
+                                &= 35 \quad \text{(通り)}
+        \end{align*}
+    \end{proof}
+    \vspace{1em}
+
+練習24(1)において, 8人から2人選ぶことは, 選ばない6人を選ぶことと同じである.
+
+よって, 次の等式が成り立つ.
+
+\[_{8}\mathrm{C}_{2} = _{8}\mathrm{C}_{6}\]
+\vspace{1em}
+
+これを一般化したものを次に示す.
+
 \begin{theorembox}[thm:]{\textbf{$_{\bm{n}}\mathbf{C}_{\bm{r}}$ の性質}}
     一般に, $n$ 個から $r$ 個取る組合せの総数は, $n$ 個から $(n-r)$ 個取る組合わせの総数に等しい.
     すなわち, 次の等式が成り立つ.
@@ -193,6 +368,85 @@ Theorem\ref{eq:組合せの総数}において, 特に ${}_n\mathrm{C}_1 = n$ , 
         {}_{\bm{n}}\mathbf{C}_{\bm{r}} \bm{=} {}_{\bm{n}}\mathbf{C}_{\bm{n-r}}
     \end{align}
 \end{theorembox}
+\vspace{1em}
+
+% 練習26
+\begin{exercise}[【教p.34 練習26】]
+    正六角形について, 次の数を求めよ.
+    \begin{enumerate}
+        \item 3個の頂点を結んでできる三角形の個数
+        \item 2個の頂点を結ぶ線分の本数
+        \item 対角線の本数
+    \end{enumerate}
+\end{exercise}
+
+    \begin{proof}\mbox{}\\
+        \indent(1)
+        \begin{align*}
+            _{6}\mathrm{C}_{3} &= \dfrac{\,6 \cdot 5 \cdot 4\,}{\,3 \cdot 2 \cdot 1\,} \\
+                                &= 20 \quad \text{(個)}
+        \end{align*}
+        \vspace{0.5em}
+        \indent(2)
+        \begin{align*}
+            _{6}\mathrm{C}_{2} &= \dfrac{\,6 \cdot 5\,}{\,2 \cdot 1\,} \\
+                                &= 15 \quad \text{(本)}
+        \end{align*}
+        \vspace{0.5em}
+        \indent(3)
+        \begin{align*}
+            _{6}\mathrm{C}_{4} &= \dfrac{\,6 \cdot 5 \cdot 4 \cdot 3\,}{\,4 \cdot 3 \cdot 2 \cdot 1\,} \\
+                                &= 9 \quad \text{(本)}
+        \end{align*}
+    \end{proof}
+    \vspace{1em}
+
+% 応用例題7
+\begin{example}[【教p.35 応用例題7】]
+    大人6人, 子ども4人の中から, 5人を選ぶとき, 次のような選び方は何通りあるか.
+    \begin{enumerate}
+        \item 大人3人と子ども2人を選ぶ.
+        \item 子どもが少なくとも1人は含まれるように選ぶ.
+    \end{enumerate}
+\end{example}
+
+\begin{proof}\mbox{}\\
+    \indent (1)
+\end{proof}
+\vspace{1em}
+
+\begin{proof}\mbox{}\\
+    \indent (2)
+\end{proof}
+\vspace{1em}
+
+% 応用例題8
+\begin{example}[【教p.36 応用例題8】]
+    6人を次のように分けるとき, 分け方は何通りあるか.
+    \begin{enumerate}
+        \item A, B, C の3つの部屋に, 2人ずつ分ける.
+        \item 2人ずつの3つの部屋に分ける.
+    \end{enumerate}
+\end{example}
+
+\begin{proof}\mbox{}\\
+    \indent (1)
+\end{proof}
+\vspace{1em}
+
+\begin{proof}\mbox{}\\
+    \indent (2)
+\end{proof}
+\vspace{1em}
+\newpage
+
+ここで, もう一度 Permutation と Combination の違いを復習しておこう.
+
+まずは, 日本語の意味の違いから. Permutation は「順列」, Combination は「組合せ」である.
+したがって, 順列の総数を求めたいときは Permutation を, 組合せの総数を求めたいときは Combination を使ってきたと思う.
+
+しかし, ここからは「順列」の総数を求めるのに, 「組合せ」Combination を利用できる場合があるということを覚えておこう.
+これが, Permutation と Combination を混同させる原因の一つである.
 
 \begin{theorembox}[thm:同じものを含む順列の総数]{\textbf{同じものを含む順列の総数}}
     $a$ が $p$ 個, $b$ が $q$ 個, $c$ が $r$ 個あるとき, それら全部を1列に並べる順列の総数は
