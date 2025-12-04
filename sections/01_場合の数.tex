@@ -7,7 +7,7 @@
 % 割愛
 
 \subsection{順列}
-
+% 順列
 \begin{definitionbox}[def:順列]{\textbf{順列}}
     \label{def:順列}
     いくつかのものを順に1列に並べるとき, その並びの1つ1つを \textbf{順列} という.
@@ -38,6 +38,7 @@
 
 が得られる.
 
+% 階乗
 \begin{definitionbox}[def:階乗]{\textbf{階乗}}
     \label{def:階乗}
     $(*)$ の右辺は, $1$ から $n$ までのすべての自然数の積である.
@@ -58,7 +59,7 @@ $^{*}$ ${}_n\mathrm{P}_r$ の P は 順列を意味するPermutation の頭文�
 
 \begin{theorembox}[thm:階乗]{\textbf{階乗}}
     \label{thm:階乗}
-    \ref{def:階乗} より, $n$ の階乗 $n!$ は次の式で表される.
+    Definition\ref{def:階乗} より, $n$ の階乗 $n!$ は次の式で表される.
 
     \begin{align}
         _{\bm{n}}\mathbf{P}_{\bm{r}} \bm{=} \bm{n!} \bm{=} \bm{n (n-1) (n-2) \cdots \cdots 3 \cdot 2 \cdot 1}
@@ -81,7 +82,7 @@ Definition\ref{def:順列}より, 一般に, 次のことがいえる.
     \label{thm:順列の総数②}
 
     \begin{align}
-        _{\bm{n}}\mathbf{P}_{\bm{r}} \bm{=} \dfrac{\bm{n!}}{\bm{(n-r)}\bm{!}}
+        _{\bm{n}}\mathbf{P}_{\bm{r}} \bm{=} \dfrac{\,\bm{n!}\,}{\,\bm{(n-r)}\bm{!}\,}
         \label{eq:順列の総数②}
     \end{align}
 \end{theorembox}
@@ -103,7 +104,7 @@ Theorem\ref{thm:順列の総数②}が $r = 0, r = n$ のときも成り立つ�
     異なる $n$ 個のものの円順列の総数について, 次のことがいえる.
 
     \begin{align}
-        \dfrac{_{\bm{n}}\mathbf{P}_{\bm{n}}}{\bm{n}} \bm{= (n-1)!}
+        \dfrac{\,_{\bm{n}}\mathbf{P}_{\bm{n}}\,}{\,\bm{n}\,} \bm{= (n-1)!}
         \label{eq:円順列の総数}
     \end{align}
 \end{theorembox}
@@ -113,6 +114,7 @@ Theorem\ref{thm:順列の総数②}が $r = 0, r = n$ のときも成り立つ�
 
 ここまでは, 異なるものだけを並べる順列を考えてきた. ここでは, 同じものを繰り返し使うことを許した場合の順列を考えてみよう.
 
+% 重複順列
 \begin{definitionbox}[def:重複順列]{\textbf{重複順列}}
     \label{def:重複順列}
     一般に, \uwave{異なる $n$ 種類のものから重複を許して $r$ 個取って} 並べる順列を
@@ -134,27 +136,73 @@ Theorem\ref{thm:順列の総数②}が $r = 0, r = n$ のときも成り立つ�
 
 \subsection{組合せ}
 
-    \begin{theorembox}[thm:組合せ]{\textbf{組合せの総数}}
-        異なる $n$ 個のものから $r$ 個を選ぶ組合せの総数は次の式で表される.
+% 組合わせ
+\begin{definitionbox}[def:組合せ]{\textbf{組合せ}}
+    \label{def:組合せ}
+    一般に, \uwave{異なる $n$ 個のものから異なる $r$ 個を取り出して} 作る組合せを
+    \begin{center}
+        $\bm{n}$\textbf{個から}$\bm{r}$\textbf{個取る組合せ}
+    \end{center}
+    といい, その総数を $_{\bm{n}}\mathbf{C}_{\bm{r}}$ $^{*}$ で表す. ただし, $r \leqq n$ とする.
+\end{definitionbox}
+\vspace{1em}
 
-        \begin{align}
-            {}_n\mathrm{C}_r = \frac{{}_n\mathrm{P}_r}{r!} = \frac{n!}{r!(n-r)!}
-            \label{eq:組合せの総数}
-        \end{align}
-    \end{theorembox}
+ここで, Permutation と Combination の違いを確認しておこう.
 
-    \begin{theorembox}[thm:組合せの性質]{\textbf{組合せの性質}}
-        次の等式が成り立つ.
+まずは, 日本語の意味の違いから. Permutation は「順列」, Combination は「組合せ」である.
 
-        \begin{align}
-            {}_n\mathrm{C}_r = {}_n\mathrm{C}_{n-r}
-            \label{eq:組合せの性質1}
-        \end{align}
+次に, 数学的な視点から, Permutation と Combination の違いを考えてみよう.
 
-        \begin{align}
-            {}_n\mathrm{C}_r = {}_{n-1}\mathrm{C}_{r-1} + {}_{n-1}\mathrm{C}_r
-            \label{eq:組合せの性質2}
-        \end{align}
-    \end{theorembox}
-    \newpage
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+\vspace{1em}
+
+\begin{theorembox}[thm:組合せの総数]{\textbf{組合せの総数 $_{\bm{n}}\mathbf{C}_{\bm{r}}$}}
+    $n$ 個から $r$ 個取る組合せの総数 $_{n}\mathrm{C}_{r}$ は次の式で表される.
+
+    \begin{align}
+        {}_{\bm{n}}\mathrm{C}_{\bm{r}} \bm{=} \dfrac{\,{}_{\bm{n}}\mathrm{P}_{\bm{r}}\,}{\,\bm{r!}\,} \bm{=}
+        \dfrac{\,\bm{n(n-1)(n-2)\cdots\cdots(n-r+1)}\,}{\,\bm{r(r-1)(r-2)\cdots\cdots \cdot 3 \cdot 2 \cdot 1}\,}
+        \label{eq:組合せの総数}
+    \end{align}
+\end{theorembox}
+\vspace{1em}
+
+Theorem\ref{eq:組合せの総数}において, 特に ${}_n\mathrm{C}_1 = n$ , ${}_n\mathrm{C}_n = 1$ である.
+
+また, 式\ref{eq:順列の総数②}より, ${}_{\bm{n}}\mathbf{C}_{\bm{r}} \bm{=} \dfrac{\,\bm{n!}\,}{\,\bm{r!(n-r)!}\,}$
+と表すこともできる. ただし, ${}_{\bm{n}}\mathbf{C}_{\bm{0}} \bm{=} 1$ と定めることとする.
+\vspace{1em}
+
+\begin{theorembox}[thm:]{\textbf{$_{\bm{n}}\mathbf{C}_{\bm{r}}$ の性質}}
+    一般に, $n$ 個から $r$ 個取る組合せの総数は, $n$ 個から $(n-r)$ 個取る組合わせの総数に等しい.
+    すなわち, 次の等式が成り立つ.
+    \begin{align}
+        {}_{\bm{n}}\mathbf{C}_{\bm{r}} \bm{=} {}_{\bm{n}}\mathbf{C}_{\bm{n-r}}
+    \end{align}
+\end{theorembox}
+
+\begin{theorembox}[thm:同じものを含む順列の総数]{\textbf{同じものを含む順列の総数}}
+    $a$ が $p$ 個, $b$ が $q$ 個, $c$ が $r$ 個あるとき, それら全部を1列に並べる順列の総数は
+
+    \begin{align}
+        {}_{n}\mathrm{C}_{p} \times {}_{n-p}\mathrm{C}_{q} = \dfrac{\,\bm{n!}\,}{\,\bm{p!\;q!\;r!}\,} \qquad \qquad
+        \text{ただし} \qquad p + q + r = n
+        \label{eq:同じものを含む順列の総数}
+    \end{align}
+\end{theorembox}
+\vspace{1em}
+
+$r = 0$ のときは, ${}_{n-p}\mathrm{C}_{q} = 1$ であり, 順列の総数は $\dfrac{\,n!\,}{\,p!\;q!\,}$ である.
