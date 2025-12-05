@@ -14,6 +14,8 @@
 \usepackage[most]{tcolorbox}
 \usepackage[dvipdfmx]{xcolor}
 \usepackage{environ}
+\usepackage{etoolbox}
+\usepackage{needspace}
 \usetikzlibrary{intersections,calc,arrows.meta}
 
 % 行間を少し広げる
@@ -88,6 +90,22 @@
 \theoremstyle{myplain}
 \newtheorem{theorem}{Theorem}
 \newtheorem*{theorem*}{Theorem}
+
+% 証明環境を再定義（証明環境内の最後に5行の空行を追加、□の前、ページを跨がないように）
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+  \needspace{8\baselineskip}%  証明環境全体が1ページに収まるように必要なスペースを確保
+  \pushQED{\qed}%
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \trivlist
+  \item[\hskip\labelsep
+        \itshape
+    #1\@addpunct{.}]\ignorespaces
+}{%
+  \par\vspace*{5\baselineskip}%  証明環境内の解答欄確保のため5行の空行を追加（□の前）
+  \popQED\endtrivlist\@endpefalse
+}
+\makeatother
 
 % ========================================
 % 問題環境の設定
@@ -182,7 +200,7 @@
 % 解答を表示したい場合：\showanswertrue
 % 解答を隠したい場合：\showanswerfalse
 \newif\ifshowanswer
-% ←ここを \showanswertrue に変更すると解答が表示されます
+% ここを \showanswertrue に変更すると解答が表示されます
 \showanswertrue
 % 穴埋めコマンドの修正版（upLaTeX対応）
 \newcommand{\Blank}[2][3cm]{%

@@ -26,6 +26,7 @@
         \label{eq:順列の総数①}
     \end{align}
 \end{theorembox}
+\newpage
 
 % 練習14
 \begin{exercise}[【教p.24 練習14】]
@@ -43,7 +44,10 @@
             {}_{10}\mathrm{P}_{3} &= 10 \cdot 9 \cdot 8 \\
                                 &= 720 \quad \text{(通り)}
         \end{alignanswer*}
-        \vspace{0.5em}
+    \end{proof}
+    \vspace{1em}
+
+    \begin{proof}\mbox{}\\
         (2) 7個の数字から4個を選んで並べる順列の総数であるから,
 
         \begin{alignanswer*}
@@ -52,7 +56,6 @@
         \end{alignanswer*}
     \end{proof}
 \newpage
-
 
 順列の総数 ${}_n\mathrm{P}_r$ の式で, 特に $r = n$ のときは等式
 
@@ -87,6 +90,7 @@ Definition\ref{def:順列}より, 一般に, 次のことがいえる.
 \vspace{1em}
 
 % 証明
+\begin{samepage}
 \begin{proof}\mbox{}\\
     \begin{align*}
         _{n}\mathrm{P}_{r} &= n (n-1) (n-2) \cdots \cdots 3 \cdot 2 \cdot 1\\
@@ -94,8 +98,10 @@ Definition\ref{def:順列}より, 一般に, 次のことがいえる.
                         {\,\bm{(n - r) \cdots \cdots 3 \cdot 2 \cdot 1}\,} \\
                         &= \dfrac{\,\bm{n!}\,}{\,\bm{(n - r)!}\,}
     \end{align*}
+    \vspace{-5\baselineskip}%  この証明環境だけ空行を追加しない（□の前に配置）
 \end{proof}
-
+\vspace{1em}%  □と次の定理環境の間に適切な間隔を確保
+\end{samepage}
 
 \begin{theorembox}[thm:順列の総数②]{\textbf{順列の総数② $_{\bm{n}}\mathbf{P}_{\bm{r}}$}}
 
@@ -144,18 +150,18 @@ $^{*}$ ${}_n\mathrm{P}_r$ の P は 順列を意味するPermutation の頭文�
         \end{enumerate}
     \end{example}
 
-    \begin{techniquebox}[tech:83]{\textbf{隣り合うものは合体させて、隣り合わないものは最後に挿入しよう！}}
-        「隣り合う」という条件が与えられれば、合体させたものについても、自身の \textbf{階乗通り} の合体方法があることに注意したい。
+    \begin{techniquebox}[tech:83]{\textbf{隣り合うものは合体させて, 隣り合わないものは最後に挿入しよう！}}
+        「隣り合う」という条件が与えられれば, 合体させたものについても, 自身の \textbf{階乗通り} の合体方法があることに注意したい.
 
-        一方、「隣り合わない」という条件が与えられれば、それを \textbf{間または両端} に挿入することを考えよう!
+        一方, 「隣り合わない」という条件が与えられれば, それを \textbf{間または両端} に挿入することを考えよう!
     \end{techniquebox}
 
     \begin{proof}\mbox{}\\
-        (1) 両端の大人の並び方は、 $\answermath{{}_{4}\mathrm{P}_{2}}$ 通りある.
+        (1) 両端の大人の並び方は,  $\answermath{{}_{4}\mathrm{P}_{2}}$ 通りある.
 
-        そのどの場合に対しても、間に並ぶ残りの5人の並び方は、$\answermath{5!}$ 通りある.
+        そのどの場合に対しても, 間に並ぶ残りの5人の並び方は, $\answermath{5!}$ 通りある.
 
-        よって、並び方の総数は、\fitblankbf[積の法則]{8} により
+        よって, 並び方の総数は, \fitblankbf[積の法則]{8} により
 
         \begin{alignanswer*}
             {}_{4}\mathrm{P}_{2} \times 5! &= 12 \times 120 \\
@@ -164,12 +170,12 @@ $^{*}$ ${}_n\mathrm{P}_r$ の P は 順列を意味するPermutation の頭文�
     \end{proof}
 
     \begin{proof}\mbox{}\\
-        (2) 子ども3人をひとまとめにする。
+        (2) 子ども3人をひとまとめにする.
 
-        大人4人とひとまとめにした子ども4人の並び方は、$\answermath{5!}$ 通りある.
-        そのどの場合に対しても、ひとまとめにした子ども3人の並び方は、$\answermath{3!}$ 通りある.
+        大人4人とひとまとめにした子ども4人の並び方は, $\answermath{5!}$ 通りある.
+        そのどの場合に対しても, ひとまとめにした子ども3人の並び方は, $\answermath{3!}$ 通りある.
 
-        よって、並び方の総数は、\fitblankbf[積の法則]{8} により
+        よって, 並び方の総数は, \fitblankbf[積の法則]{8} により
 
         \begin{alignanswer*}
             5! \times 3! &= 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 \times 3 \cdot 2 \cdot 1 \\
@@ -187,40 +193,45 @@ $^{*}$ ${}_n\mathrm{P}_r$ の P は 順列を意味するPermutation の頭文�
         \item 4桁の奇数
     \end{enumerate}
 \end{example}
+\vspace{-1em}%  例題環境後の空行を減らす
 
-\begin{techniquebox}[tech:79]{\textbf{場合の数・確率の問題は、いかに状況を整理するかを考えよ！}}
-    「どのように場合分けすればよいか」「この条件は、要はどういうことなのか」などを、\textbf{実験を通して} 考えよう。
+\begin{techniquebox}[tech:79]{\textbf{場合の数・確率の問題は, いかに状況を整理するかを考えよ！}}
+    「どのように場合分けすればよいか」「この条件は, 要はどういうことなのか」などを, \textbf{実験を通して} 考えよう.
 
-    １つの方針として、\textbf{制限のあるもの} から考える、というものがある。
+    １つの方針として, \textbf{制限のあるもの} から考える, というものがある.
 \end{techniquebox}
+\vspace{-0.5em}%  テクニックボックス後の空行を減らす
 
 \begin{proof}\mbox{}\\
-    (1)千の位は、0以外の数字 1, 2, 3, 4, 5 のどれかであるから、その選び方は $\answermath{5}$ 通りある。
+    (1)千の位は, 0以外の数字 1, 2, 3, 4, 5 のどれかであるから, その選び方は $\answermath{5}$ 通りある.
 
-    そのどの場合に対しても、百、十、一の位には、残りの5個の数字から3個取って並べるから、
-    その並び方は $\answermath{_{5}\mathrm{P}_{3}}$ 通りある。
+    そのどの場合に対しても, 百, 十, 一の位には, 残りの5個の数字から3個取って並べるから,
+    その並び方は $\answermath{_{5}\mathrm{P}_{3}}$ 通りある.
 
-    よって、求める個数は、積の法則により
+    よって, 求める個数は, 積の法則により
 
     \begin{alignanswer*}
         5 \times {}_{5}\mathrm{P}_{3} &= 5 \times 5 \cdot 4 \cdot 3 \\
                                 &= 300 \quad \text{(個)}
     \end{alignanswer*}
+    \vspace{-3\baselineskip}%  この証明環境の空行を減らす
 \end{proof}
+\vspace{-0.5em}%  証明環境間の空行を減らす
 
 \begin{proof}\mbox{}\\
-    (2) 一の位は、数字 1, 3, 5 のどれかであるから、その選び方は $\answermath{3}$ 通りある。
+    (2) 一の位は, 数字 1, 3, 5 のどれかであるから, その選び方は $\answermath{3}$ 通りある.
 
-    そのどの場合に対しても、千の位は、0 と一の位の数字以外の4個の数字のどれかであるから、その選び方は $\answermath{4}$ 通りある。
+    そのどの場合に対しても, 千の位は, 0 と一の位の数字以外の4個の数字のどれかであるから, その選び方は $\answermath{4}$ 通りある.
 
-    さらに、百、十の位には、残りの4個の数字から2個取って並べるから、その \uwave{並べ方}は $\answermath{_{4}\mathrm{P}_{2}}$ 通りある。
+    さらに, 百, 十の位には, 残りの4個の数字から2個取って並べるから, その \uwave{並べ方}は $\answermath{_{4}\mathrm{P}_{2}}$ 通りある.
 
-    よって、求める個数は、積の法則により
+    よって, 求める個数は, 積の法則により
 
     \begin{alignanswer*}
         3 \times 4 \times {}_{4}\mathrm{P}_{2} &= 3 \times 4 \times 4 \cdot 3 \\
                                 &= 144 \quad \text{(個)}
     \end{alignanswer*}
+    \vspace{-3\baselineskip}%  この証明環境の空行を減らす
 \end{proof}
 \newpage
 
@@ -246,8 +257,8 @@ $^{*}$ ${}_n\mathrm{P}_r$ の P は 順列を意味するPermutation の頭文�
     色の異なる6個の玉を円形に並べて置くとき, 並べ方の総数を求めよ.
 \end{exercise}
 
-\begin{techniquebox}[tech:86]{\textbf{円順列は、1箇所を固定して考えよ！}}
-    ある1箇所を固定してしまえば、残りの箇所は \textbf{区別できるようになる} ため、今までの順列の問題と同様に処理することができる。
+\begin{techniquebox}[tech:86]{\textbf{円順列は, 1箇所を固定して考えよ！}}
+    ある1箇所を固定してしまえば, 残りの箇所は \textbf{区別できるようになる} ため, 今までの順列の問題と同様に処理することができる.
 \end{techniquebox}
 
     \begin{proof}\mbox{}\\
@@ -256,6 +267,7 @@ $^{*}$ ${}_n\mathrm{P}_r$ の P は 順列を意味するPermutation の頭文�
                     &= 120 \quad \text{(通り)}
         \end{alignanswer*}
     \end{proof}
+\newpage
 
 % 応用例題6
 \begin{example}[【教p.29 応用例題6】]
@@ -263,14 +275,14 @@ $^{*}$ ${}_n\mathrm{P}_r$ の P は 順列を意味するPermutation の頭文�
     \end{example}
 
     \begin{proof}\mbox{}\\
-        先生が円形に並んで、間に生徒が並んでいくと考えればよい。先生が円形に並んでから特定の生徒を基準にすると、
-        間に入る生徒の並び方は、1列に並ぶ順列と考えることができる。
+        先生が円形に並んで, 間に生徒が並んでいくと考えればよい. 先生が円形に並んでから特定の生徒を基準にすると,
+        間に入る生徒の並び方は, 1列に並ぶ順列と考えることができる.
 
-        先生4人の円順列の総数は、$\answermath{(4-1)!}$ 通りある。
+        先生4人の円順列の総数は, $\answermath{(4-1)!}$ 通りある.
 
-        そのどの場合に対しても、生徒4人が先生の間に1人ずつ並ぶ方法は、$\answermath{4!}$ 通りある。
+        そのどの場合に対しても, 生徒4人が先生の間に1人ずつ並ぶ方法は, $\answermath{4!}$ 通りある.
 
-        よって、求める並び方の総数は、積の法則により
+        よって, 求める並び方の総数は, 積の法則により
 
         \begin{alignanswer*}
             (4-1)! \times 4! &= 3 \cdot 2 \cdot 1 \times 4 \cdot 3 \cdot 2 \cdot 1 \\
@@ -309,24 +321,26 @@ $^{*}$ ${}_n\mathrm{P}_r$ の P は 順列を意味するPermutation の頭文�
         \item 3個
     \end{enumerate}
 \end{exercise}
+\vspace{-1em}%  練習問題環境後の空行を減らす
 
 \begin{proof}\mbox{}\\
-    (1) 4個から2個取る重複順列であるから、
+    (1) 4個から2個取る重複順列であるから,
 
     \begin{alignanswer*}
         4^2 &= 16 \quad \text{(通り)}
     \end{alignanswer*}
+    \vspace{-3\baselineskip}%  この証明環境の空行を減らす
 \end{proof}
-\vspace{1em}
+\vspace{-0.5em}%  証明環境間の空行を減らす
 
 \begin{proof}\mbox{}\\
-    (2) 4個から3個取る重複順列であるから、
+    (2) 4個から3個取る重複順列であるから,
 
     \begin{alignanswer*}
         4^3 &= 64 \quad \text{(通り)}
     \end{alignanswer*}
+    \vspace{-3\baselineskip}%  この証明環境の空行を減らす
 \end{proof}
-\vspace{1em}
 \newpage
 
 \subsection{組合せ}
@@ -387,7 +401,7 @@ Theorem\ref{eq:組合せの総数}において, 特に ${}_n\mathrm{C}_1 = n$ , 
 \end{align*}
 \vspace{1em}
 
-と表すこともできる。ただし、${}_n\mathrm{C}_0 = 1$ と定めることとする。
+と表すこともできる. ただし, ${}_n\mathrm{C}_0 = 1$ と定めることとする.
 \newpage
 
 % 練習24
@@ -400,7 +414,7 @@ Theorem\ref{eq:組合せの総数}において, 特に ${}_n\mathrm{C}_1 = n$ , 
 \end{exercise}
 
     \begin{proof}\mbox{}\\
-        (1) 8個から2個取る組合せであるから、
+        (1) 8個から2個取る組合せであるから,
 
         \begin{alignanswer*}
             _{8}\mathrm{C}_{2} &= \dfrac{\,8 \cdot 7\,}{\,2 \cdot 1\,} \\
@@ -409,13 +423,14 @@ Theorem\ref{eq:組合せの総数}において, 特に ${}_n\mathrm{C}_1 = n$ , 
     \end{proof}
 
     \begin{proof}\mbox{}\\
-        (2) 7個から4個取る組合せであるから、
+        (2) 7個から4個取る組合せであるから,
 
         \begin{alignanswer*}
             _{7}\mathrm{C}_{4} &= \dfrac{\,7 \cdot 6 \cdot 5 \cdot 4\,}{\,4 \cdot 3 \cdot 2 \cdot 1\,} \\
                                 &= 35 \quad \text{(通り)}
         \end{alignanswer*}
     \end{proof}
+\newpage
 
 練習24(1)において, 8人から2人選ぶことは, 選ばない6人を選ぶことと同じである。
 
@@ -432,7 +447,6 @@ Theorem\ref{eq:組合せの総数}において, 特に ${}_n\mathrm{C}_1 = n$ , 
         {}_{\bm{n}}\mathbf{C}_{\bm{r}} \bm{=} {}_{\bm{n}}\mathbf{C}_{\bm{n-r}}
     \end{align}
 \end{theorembox}
-\newpage
 
 % 練習26
 \begin{exercise}[【教p.34 練習26】]
@@ -442,24 +456,29 @@ Theorem\ref{eq:組合せの総数}において, 特に ${}_n\mathrm{C}_1 = n$ , 
         \item 2個の頂点を結ぶ線分の本数
     \end{enumerate}
 \end{exercise}
+\vspace{-1em}%  練習問題環境後の空行を減らす
 
     \begin{proof}\mbox{}\\
-        (1) 6個の頂点はどの3点も一直線上にないから、3個の点を1組決めると三角形を1個作ることができる。
+        (1) 6個の頂点はどの3点も一直線上にないから, 3個の点を1組決めると三角形を1個作ることができる.
 
         \begin{alignanswer*}
             _{6}\mathrm{C}_{3} &= \dfrac{\answermath{6 \cdot 5 \cdot 4}}{\answermath{3 \cdot 2 \cdot 1}} \\
                                 &= 20 \quad \text{(個)}
         \end{alignanswer*}
+        \vspace{-3\baselineskip}%  この証明環境の空行を減らす
     \end{proof}
+    \vspace{-0.5em}%  証明環境間の空行を減らす
 
     \begin{proof}\mbox{}\\
-        (2) 6個の頂点それぞれに対して、相方の点を1個決めると2個の頂点を結ぶ線分を1本作ることができる。
+        (2) 6個の頂点それぞれに対して, 相方の点を1個決めると2個の頂点を結ぶ線分を1本作ることができる.
 
         \begin{alignanswer*}
             _{6}\mathrm{C}_{2} &= \dfrac{\answermath{6 \cdot 5}}{\answermath{2 \cdot 1}} \\
                                 &= 15 \quad \text{(本)}
         \end{alignanswer*}
+        \vspace{-3\baselineskip}%  この証明環境の空行を減らす
     \end{proof}
+    \vspace{-0.5em}%  証明環境と例題環境間の空行を減らす
 
 % 応用例題7
 \begin{example}[【教p.35 応用例題7】]
@@ -469,38 +488,41 @@ Theorem\ref{eq:組合せの総数}において, 特に ${}_n\mathrm{C}_1 = n$ , 
         \item 子どもが少なくとも1人は含まれるように選ぶ.
     \end{enumerate}
 \end{example}
+\vspace{-1.5em}%  例題環境後の空行をさらに減らす
 
-\begin{techniquebox}[tech:80]{\textbf{場合の数・確率の問題では、常に余事象を疑え！}}
-    \textbf{「少なくとも〜」というキーワードがあれば}、余事象は限られるため容易に疑える。
+\begin{techniquebox}[tech:80]{\textbf{場合の数・確率の問題では, 常に余事象を疑え！}}
+    \textbf{「少なくとも〜」というキーワードがあれば}, 余事象は限られるため容易に疑える.
 
-    しかし、\textbf{そのようなキーワードがなくとも余事象を考えたほうが楽な場合も多い} ため、余事象を疑うことを習慣化しよう。
+    しかし, \textbf{そのようなキーワードがなくとも余事象を考えたほうが楽な場合も多い} ため, 余事象を疑うことを習慣化しよう.
 \end{techniquebox}
-\newpage
+\vspace{-1em}%  テクニックボックス後の空行をさらに減らす
 
 \begin{proof}\mbox{}\\
-    (1) 大人と子どもを別々に選び、積の法則を用いて求めたい。
+    (1) 大人と子どもを別々に選び, 積の法則を用いて求めたい.
 
-    大人3人の選び方は、$\answermath{{}_{6}\mathrm{C}_{3}}$ 通りある。
+    大人3人の選び方は, $\answermath{{}_{6}\mathrm{C}_{3}}$ 通りある.
 
-    そのどの場合に対しても、子ども2人の選び方は、$\answermath{{}_{4}\mathrm{C}_{2}}$ 通りある。
+    そのどの場合に対しても, 子ども2人の選び方は, $\answermath{{}_{4}\mathrm{C}_{2}}$ 通りある.
 
-    よって、求める選び方の総数は、積の法則により
+    よって, 求める選び方の総数は, 積の法則により
 
     \begin{alignanswer*}
         {}_{6}\mathrm{C}_{3} \times {}_{4}\mathrm{C}_{2} &= \dfrac{\answermath{6 \cdot 5 \cdot 4}}{\answermath{3 \cdot 2 \cdot 1}}
         \times \dfrac{\answermath{4 \cdot 3}}{\answermath{2 \cdot 1}} \\
                                 &= 120 \quad \text{(通り)}
     \end{alignanswer*}
+    \vspace{-4\baselineskip}%  この証明環境の空行をさらに減らす
 \end{proof}
+\vspace{-1em}%  証明環境間の空行をさらに減らす
 
 \begin{proof}\mbox{}\\
-    (2) 「少なくとも1人」は「1人以上」という意味である。したがって、余事象が「 \answertext{\textbf{0人}} 」と限定されるためこれを利用する。
+    (2) 「少なくとも1人」は「1人以上」という意味である. したがって, 余事象が「 \answertext{\textbf{0人}} 」と限定されるためこれを利用する.
 
-    10人から5人の選び方は、$\answermath{{}_{10}\mathrm{C}_{5}}$ 通りある。
+    10人から5人の選び方は, $\answermath{{}_{10}\mathrm{C}_{5}}$ 通りある.
 
-    子どもが1人も選ばれず、5人とも大人となる選び方は、$\answermath{{}_{6}\mathrm{C}_{5}}$ 通りある。
+    子どもが1人も選ばれず, 5人とも大人となる選び方は, $\answermath{{}_{6}\mathrm{C}_{5}}$ 通りある.
 
-    よって、求める選び方の総数は
+    よって, 求める選び方の総数は
 
     \begin{alignanswer*}
         {}_{10}\mathrm{C}_{5} - {}_{6}\mathrm{C}_{5} &= {}_{10}\mathrm{C}_{5} - {}_{6}\mathrm{C}_{1}\\
@@ -508,8 +530,9 @@ Theorem\ref{eq:組合せの総数}において, 特に ${}_n\mathrm{C}_1 = n$ , 
                                 &= 252 - 6 \\
                                 &= 246 \quad \text{(通り)}
     \end{alignanswer*}
+    \vspace{-4\baselineskip}%  この証明環境の空行をさらに減らす
 \end{proof}
-\vspace{1em}
+\newpage
 
 % 応用例題8
 \begin{example}[【教p.36 応用例題8】]
@@ -519,16 +542,52 @@ Theorem\ref{eq:組合せの総数}において, 特に ${}_n\mathrm{C}_1 = n$ , 
         \item 2人ずつの3つの部屋に分ける.
     \end{enumerate}
 \end{example}
+\vspace{-1.5em}%  例題環境後の空行を減らす
 
 \begin{proof}\mbox{}\\
-    (1)
+    (1)部屋Aの2人の選び方は $\answermath{{}_{6}\mathrm{C}_{2}}$ 通りある.
+
+    部屋Bの2人の選び方は残りの4人から選ぶので $\answermath{{}_{4}\mathrm{C}_{2}}$ 通り,
+
+    部屋A, B の人が決まれば, 残りの部屋Cの2人は決まる.
+
+    よって, 分け方の総数は, 積の法則により
+
+    \begin{alignanswer*}
+        {}_{6}\mathrm{C}_{2} \times {}_{4}\mathrm{C}_{2} &= \dfrac{\answermath{6 \cdot 5}}{\answermath{2 \cdot 1}}
+        \times \dfrac{\answermath{4 \cdot 3}}{\answermath{2 \cdot 1}} \\
+                                &= 90 \quad \text{(通り)}
+    \end{alignanswer*}
+    \vspace{-4\baselineskip}%  この証明環境の空行を減らす
 \end{proof}
-\vspace{1em}
+\vspace{-1em}%  証明環境とテクニックボックス間の空行を減らす
+
+\begin{techniquebox}[tech:82]{\textbf{区別できないものを含む場合は, あえて異なるものとして区別して, 重複度で割る方法を疑え！}}
+    \textbf{区別できないものをあえて区別して考えた上で, 重複度で割ること} で, 場合の数を求める手法が有効なことも多い.
+
+    なお, 問題によっては \textbf{重複度の異なるものが混在している場合もある} ので, 検討は丁寧に行うことに注意したい.
+\end{techniquebox}
+\vspace{-1em}%  テクニックボックス後の空行を減らす
 
 \begin{proof}\mbox{}\\
-    (2)
+    (2) 本問と前問の違いは, 部屋に名前がついているかいないか, すなわち, それぞれの組を区別できるかできないかである.
+    （人数が違えば, それは区別できる.）
+
+    例えば, １つの組分け \{a, b\}, \{c, d\}, \{e, f\} において, この3つの組にA, B, C の名前をつけるとすると,
+    $\answermath{3!}$ 通りのつけ方がある. よって, 本問の総数を求めるには, 前問の答えを $\answermath{3!}$ で割ればよい.
+
+    \vspace{0.5em}%  証明環境内の空行を減らす
+
+    (1)で, A, B, C の区別をなくすと, $\answermath{3!}$ 通りずつ同じ組み分けができる. $^{*}$
+
+    よって, 分け方の総数は
+
+    \begin{alignanswer*}
+        \dfrac{\,90\,}{\,3!\,} &= \dfrac{\,90\,}{\,6\,} \\
+                        &= 15 \quad \text{(通り)}
+    \end{alignanswer*}
+    \vspace{-4\baselineskip}%  この証明環境の空行を減らす
 \end{proof}
-\vspace{1em}
 \newpage
 
 ここで, もう一度 Permutation と Combination の違いを復習しておこう.
@@ -548,6 +607,155 @@ Theorem\ref{eq:組合せの総数}において, 特に ${}_n\mathrm{C}_1 = n$ , 
         \label{eq:同じものを含む順列の総数}
     \end{align}
 \end{theorembox}
-\vspace{1em}
+\vspace{-1em}%  定理環境後の空行をさらに減らす
 
 $r = 0$ のときは, ${}_{n-p}\mathrm{C}_{q} = 1$ であり, 順列の総数は $\dfrac{\,n!\,}{\,p!\;q!\,}$ である.
+
+% 例題7
+\begin{example}[【教p.38 例題7】]
+    9個の数字 1, 1, 1, 1, 2, 2, 2, 3, 3, の全部を使って, 9桁の整数を作るとき, 何個の整数が作れるか.
+\end{example}
+\vspace{-1.5em}%  例題環境後の空行を減らす
+
+\begin{proof}\mbox{}\\
+    1 が4個, 2 が3個, 3 が2個あり, これらを1列に並べるから
+
+    \begin{alignanswer*}
+        \dfrac{\,9!\,}{\,4! \cdot 3! \cdot 2!\,} &= \dfrac{\,9 \cdot 8 \cdot 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1\,}
+        {\,4 \cdot 3 \cdot 2 \cdot 1 \times 3 \cdot 2 \cdot 1 \times 2 \cdot 1\,} \\
+                                &= 1260 \quad \text{(個)}
+    \end{alignanswer*}
+    \vspace{-4\baselineskip}%  この証明環境の空行を減らす
+\end{proof}
+\vspace{-1em}%  証明環境と練習問題環境間の空行をさらに減らす
+
+% 練習29
+\begin{exercise}[【教p.39 練習29】]
+    BANANA の6文字すべて使って文字列を作るとき, 何通りの文字列が作れるか.
+\end{exercise}
+\vspace{-1em}%  練習問題環境後の空行を減らす
+
+    \begin{proof}\mbox{}\\
+        BANANA の6文字は, B が1個, A が3個, N が2個あり, これらを1列に並べるから
+
+        \begin{alignanswer*}
+            \dfrac{\,6!\,}{\,3! \cdot 2!\,} &= \dfrac{\,6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1\,}
+            {\,3 \cdot 2 \cdot 1 \times 2 \cdot 1\,} \\
+                                &= 60 \quad \text{(通り)}
+        \end{alignanswer*}
+        \vspace{-4\baselineskip}%  この証明環境の空行を減らす
+    \end{proof}
+
+% 応用例題9
+\begin{example}[【教p.39 応用例題9】]
+    \begin{minipage}{0.6\textwidth}
+        右の図は, ある地域の道を直線で示したものである. 交差点Aから交差点Bまで遠回りしないで行く
+        最短経路の道順は, 何通りあるか.
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.35\textwidth}
+        \begin{center}
+            \begin{tikzpicture}[scale=0.7]
+                % 縦線を描画（5本の縦線）
+                \foreach \x in {0,1,2,3,4}
+                    \draw (\x,0) -- (\x,3);
+
+                % 横線を描画（4本の横線）
+                \foreach \y in {0,1,2,3}
+                    \draw (0,\y) -- (4,\y);
+
+                % Aを左下に配置
+                \node[below left] at (0,0) {\textbf{A}};
+
+                % Bを右上に配置
+                \node[above right] at (4,3) {\textbf{B}};
+            \end{tikzpicture}
+        \end{center}
+    \end{minipage}
+\end{example}
+
+\begin{proof}\mbox{}\\
+    交差点から次の交差点に行くのに, ↑ と → の向きがある. このとき, 最短経路は, そのどこを通っても,
+
+    ↑ 3個と → 4個を使って作られる順列に対応している.
+
+    上へ１区画進むことを ↑ で, 右へ１区画進むことを → で表す.
+    AからBまで行く最短の道順の総数は, ↑ 3個と → 4個を1列に並べる順列の総数に等しい.
+
+    よって, 求める最短の道順の総数は
+
+    \begin{alignanswer*}
+        \dfrac{\,7!\,}{\,3! 4!\,} &= \dfrac{\,7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1\,}{\,3 \cdot 2 \cdot 1 \times 4 \cdot 3 \cdot 2 \cdot 1\,} \\
+                                &= 35 \quad \text{(通り)}
+    \end{alignanswer*}
+    \vspace{-4\baselineskip}%  この証明環境の空行を減らす
+\end{proof}
+\newpage
+
+% 練習30
+\begin{exercise}[【教p.39 練習30】]
+    \begin{minipage}{0.6\textwidth}
+        右の図のような道のある地域で, 次のような最短の道順は何通りあるか.
+        \begin{enumerate}
+            \item AからBまで行く.
+            \item AからCを通ってBまで行く.
+            \item AからCを通らずにBまで行く.
+        \end{enumerate}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.35\textwidth}
+        \begin{center}
+            \begin{tikzpicture}[scale=0.7]
+                % 縦線を描画（6本の縦線：縦3マス、横5マス）
+                \foreach \x in {0,1,2,3,4,5}
+                    \draw (\x,0) -- (\x,3);
+
+                % 横線を描画（4本の横線）
+                \foreach \y in {0,1,2,3}
+                    \draw (0,\y) -- (5,\y);
+
+                % Aを左下に配置
+                \node[below left] at (0,0) {\textbf{A}};
+
+                % Bを右上に配置
+                \node[above right] at (5,3) {\textbf{B}};
+
+                % Cを座標(2,1)に配置（点を表示し、文字を線と被らないように配置）
+                \filldraw[black] (2,1) circle (2pt);
+                \node[above right, inner sep=2pt] at (2,1) {\textbf{C}};
+            \end{tikzpicture}
+        \end{center}
+    \end{minipage}
+\end{exercise}
+\vspace{-1em}%  練習問題環境後の空行を減らす
+
+    \begin{proof}\mbox{}\\
+        (1)
+        \begin{alignanswer*}
+            \dfrac{\,8!\,}{\,3!5!\,} &= \dfrac{\,8 \cdot 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1\,}
+            {\,3 \cdot 2 \cdot 1 \times 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1\,} \\
+                                &= 56 \quad \text{(通り)}
+        \end{alignanswer*}
+        \vspace{-4\baselineskip}%  この証明環境の空行を減らす
+        \end{proof}
+    \vspace{-0.5em}%  証明環境間の空行を減らす
+
+    \begin{proof}\mbox{}\\
+        (2)
+        \begin{alignanswer*}
+            \dfrac{\,3!\,}{\,2!1!\,} \times \dfrac{\,5!\,}{\,3!2!\,} &= \dfrac{\,3 \cdot 2 \cdot 1\,}
+            {\,2 \cdot 1 \times 1\,} \times \dfrac{\,5 \cdot 4 \cdot 3 \cdot 2 \cdot 1\,}{\,3 \cdot 2 \cdot 1 \times 2 \cdot 1\,} \\
+                                &= 30 \quad \text{(通り)}
+        \end{alignanswer*}
+        \vspace{-4\baselineskip}%  この証明環境の空行を減らす
+    \end{proof}
+    \vspace{-0.5em}%  証明環境間の空行を減らす
+
+    \begin{proof}\mbox{}\\
+        (3)
+        \begin{alignanswer*}
+            56 - 30 = 26 \quad \text{(通り)}
+        \end{alignanswer*}
+        \vspace{-4\baselineskip}%  この証明環境の空行を減らす
+    \end{proof}
+\newpage
