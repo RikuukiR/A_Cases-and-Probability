@@ -2,17 +2,119 @@
 \section{確率}
 \subsection{事象と確率}
 
-    \begin{definitionbox}{}{\textbf{確率の定義}}
-        試行において, 起こりうるすべての場合が $n$ 通りあり, そのどの場合が起こることも同様に確からしいとする.
-        このとき, 事象 $A$ の起こる場合が $a$ 通りあるとすれば, 事象 $A$ の起こる\textbf{確率} $P(A)$ は次のように定義される.
-
-        \begin{align}
-            P(A) = \frac{\,a\,}{\,n\,}
-            \label{eq:確率の定義}
-        \end{align}
+% 確率
+    \begin{definitionbox}[def:確率]{\textbf{確率}}
+        ある事柄が起こることが期待される程度を表す数値を \textbf{確率} という.
     \end{definitionbox}
 
+    \begin{definitionbox}[def:試行と事象]{\textbf{試行と事象}}
+        「さいころを投げる」とか「くじを引く」などのように, 同じ条件のもとで繰り返すことができ,
+        その結果が偶然によって決まる実験や観測を \textbf{試行} という.
+
+        また, 試行の結果として起こる事柄を \textbf{事象} という.
+    \end{definitionbox}
+
+    \begin{definitionbox}[def:全事象と根元事象]{\textbf{全事象と根元事象}}
+        1つの試行において, 起こりうる結果全体を集合 $U$ で表すとき, その試行におけるどの事象も,
+        $U$ の部分集合で表すことができる. $U$ 自身で表される事象を \textbf{全事象} ,
+        $U$ のただ1つの要素からなる集合で表される事象を \textbf{根元事象} という.
+    \end{definitionbox}
+
+    \begin{definitionbox}[def:同様に確からしい]{\textbf{同様に確からしい}}
+        1つの試行において, ある事象 $A$ の起こる確率を $P(A)$ で表す. $^{*}$
+
+        ある試行において, どの根元事象が起こることも同程度に期待できるとき, これらの根元事象は \textbf{同様に確からしい} という.$^{**}$
+    \end{definitionbox}
+
+    \begin{theorembox}[thm:事象$A$の起こる確率]{\textbf{事象$A$の起こる確率}}
+        同様に確からしい試行において, 起こりうるすべての場合の数を $N$ , 事象 $A$ の起こる場合の数を $a$ とするとき,
+        事象 $A$ の起こる確率 $\bm{P(A)}$ は次の式で表される.
+
+        \begin{align}
+            \bm{P(A)} \bm{=} \dfrac{\text{\textbf{事象 $A$ の起こる場合の数}}}{\text{\textbf{起こりうるすべての場合の数}}} \bm{=} \dfrac{\,\bm{a}\,}{\,\bm{N}\,}
+            \label{eq:事象$A$の起こる確率}
+        \end{align}
+    \end{theorembox}
+
+    \vfill
+
+    \noindent
+    \rule{\textwidth}{0.4pt}
+
+    \noindent
+    $^{*}$ $P(A)$ の $P$ は,  確率を意味するProbability の頭文字である. また, 事象$A$の起こる確率を単に \textbf{事象 $A$ の確率} ということもある.
+
+    \noindent
+    $^{**}$ ここから取り上げる試行では, \uwave{全事象 $U$ におけるすべての根元事象は同様に確からしいものとする}.
+\newpage
+
+% 例題8
+\begin{example}[【教p.47 例題8】]
+    A, B の2人を含む6人のリレー選手がいる。走る順番をくじで決めるとき、A が1番目、B が6番目になる確率を求めよ。
+\end{example}
+
+\begin{proof}\mbox{}\\
+    まず、起こりうるすべての場合の数を考える。
+
+    6人全員の並び順は, $\answermath{6!}$ 通りある.
+
+    次に、求めたい場合の数を考える。
+
+    A が1番目、B が6番目のとき, A, B 以外の4人の並び順は, $\answermath{4!}$ 通りある.
+
+    よって、求める確率は
+
+    \begin{alignanswer*}
+        \dfrac{\answermath{4!}}{\answermath{6!}} = \dfrac{1}{30}
+    \end{alignanswer*}
+\end{proof}
+
+% 例題9
+\begin{example}[【教p.47 例題9】]
+    赤玉 $4$ 個, 白玉 $5$ 個の入った袋から、$2$ の玉を同時に取り出すとき、赤玉 $1$ 個、白玉 $1$ 個が出る確率を求めよ。
+\end{example}
+
+\begin{proof}\mbox{}\\
+    まず、起こりうるすべての場合の数を考える。
+    全部の $9$ 個から $2$ 個取る組合せは, $\answermath{{}_{9}\mathrm{C}_{2}}$ 通りある.
+
+    次に、求めたい場合の数を考える。
+
+    赤玉 $4$ 個から $1$ 個、白玉 $5$ 個から $1$ 個取る組合せは,
+    $\answermath{{}_{4}\mathrm{C}_{1} \times {}_{5}\mathrm{C}_{1}}$ 通りある.
+
+    よって、求める確率は
+
+    \begin{alignanswer*}
+        \dfrac{\answermath{{}_{4}\mathrm{C}_{1} \times {}_{5}\mathrm{C}_{1}}}{\answermath{{}_{9}\mathrm{C}_{2}}}
+        = 4 \times 5 \times \dfrac{2 \cdot 1}{9 \cdot 8} = \dfrac{5}{9}
+    \end{alignanswer*}
+\end{proof}
+\newpage
+
 \subsection{確率の基本性質}
+
+確率の基本性質を議論する前に、事象 $A$, $B$ に対して、次のような事象を定義しておく。
+
+    \begin{definitionbox}[def:積事象と和事象]{\textbf{積事象と和事象}}
+        事象 $A$ と $B$ がともに起こる事象を $A$ , $B$ の \textbf{積事象} といい, $\bm{A \cap B}$ で表す.
+
+        一方, 事象 $A$ または $B$ が起こる事象を $A$ と $B$ の \textbf{和事象} といい, $\bm{A \cup B}$ で表す.
+    \end{definitionbox}
+
+    \begin{definitionbox}[def:排反事象]{\textbf{排反事象}}
+        2つの事象 $A$ 、 $B$ が決して同時に起こらないとき、
+        \[A, B \text{は互いに} \textbf{排反} \text{である}\]
+        または
+        \[A, B \text{は互いに} \textbf{排反事象} \text{である}\]
+        という。
+    \end{definitionbox}
+
+    \begin{definitionbox}[def:空事象]{\textbf{空事象}}
+        $A$ 、 $B$ が互いに排反であることは、$A \cap B = \emptyset$ であることと同値である。
+
+        空集合 $\emptyset$ で表される事象を \textbf{空事象} という。空事象は決して起こらない事象である。
+    \end{definitionbox}
 
     \begin{theorembox}[thm:確率の基本性質]{\textbf{確率の基本性質}}
         事象 $A$ の確率 $P(A)$ について, 次の性質が成り立つ.
