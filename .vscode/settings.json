@@ -1,0 +1,71 @@
+{
+  // LaTeX Workshop設定
+  "latex-workshop.latex.tools": [
+    {
+      "name": "uplatex",
+      "command": "uplatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "dvipdfmx",
+      "command": "dvipdfmx",
+      "args": ["%DOCFILE%.dvi"]
+    }
+  ],
+
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "uplatex -> dvipdfmx",
+      "tools": ["uplatex", "uplatex", "dvipdfmx"]
+    }
+  ],
+
+  // デフォルトのレシピを設定
+  "latex-workshop.latex.recipe.default": "lastUsed",
+
+  // 自動ビルド設定
+  "latex-workshop.latex.autoBuild.run": "onSave",
+
+  // PDFビューアー設定
+  "latex-workshop.view.pdf.viewer": "tab",
+
+  // クリーンアップ設定
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.bbl",
+    "*.blg",
+    "*.idx",
+    "*.ind",
+    "*.lof",
+    "*.lot",
+    "*.out",
+    "*.toc",
+    "*.acn",
+    "*.acr",
+    "*.alg",
+    "*.glg",
+    "*.glo",
+    "*.gls",
+    "*.ist",
+    "*.fls",
+    "*.log",
+    "*.fdb_latexmk",
+    "*.synctex.gz",
+    "*.dvi"
+  ],
+
+  // SyncTeX設定
+  "latex-workshop.synctex.afterBuild.enabled": true,
+
+  // エラー表示設定
+  "latex-workshop.message.error.show": true,
+  "latex-workshop.message.warning.show": false
+}
+
+
+
