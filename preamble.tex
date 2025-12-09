@@ -53,9 +53,29 @@
   \fi
 }
 
-% enumerate環境のデフォルト設定（（１）, （２）形式）
-\setlist[enumerate,1]{label=（\arabic*）, leftmargin=*, labelsep=0.5em}
-\setlist[enumerate,2]{label=（\alph*）, leftmargin=*, labelsep=0.5em}
+% enumerate環境のデフォルト設定（問題環境等で使用）
+\setlist[enumerate,1]{label=\arabic*., leftmargin=*, labelsep=0.5em}
+\setlist[enumerate,2]{label=\alph*., leftmargin=*, labelsep=0.5em}
+\setlist[enumerate,3]{label=\roman*., leftmargin=*, labelsep=0.5em}
+
+% itemize環境を数学の場合分け用（（ⅰ）, （ⅱ）形式）に設定
+\newcounter{itemizecounter}
+\makeatletter
+\renewenvironment{itemize}{%
+  \setcounter{itemizecounter}{0}%
+  \begin{list}{}{%
+    \setlength{\leftmargin}{2.5em}%
+    \setlength{\labelsep}{0.5em}%
+    \setlength{\itemindent}{0em}%
+    \def\makelabel##1{%
+      \stepcounter{itemizecounter}%
+      \hss\llap{（\roman{itemizecounter}）}%
+    }%
+  }%
+}{%
+  \end{list}%
+}
+\makeatother
 
 \usepackage[normalem]{ulem} % 下線用
 \usepackage{stackengine} % 追加
@@ -216,31 +236,33 @@
 % 正解に合わせて自動で空欄を作る（em単位版）
 % 使用法: \fitblank[答え]{幅} または \fitblank{幅}（答えなしの場合）
 % 太文字版: \fitblankbf[答え]{幅}
+% 下線の両端に1文字分の空白を追加
 \newcommand{\fitblank}[2][\relax]{%
   \ifx#1\relax
     % 答えが指定されていない場合（従来の使用法）
-    \underline{\hspace*{#2em}}%
+    \hspace{1em}\underline{\hspace*{#2em}}\hspace{1em}%
   \else
     % 答えが指定されている場合
     \ifshowanswer
-      \underline{\makebox[#2em][c]{#1}}%
+      \hspace{1em}\underline{\makebox[#2em][c]{#1}}\hspace{1em}%
     \else
-      \underline{\hspace*{#2em}}%
+      \hspace{1em}\underline{\hspace*{#2em}}\hspace{1em}%
     \fi
   \fi
 }
 
 % 太文字版の空欄コマンド（答えは青色で表示）
+% 下線の両端に1文字分の空白を追加
 \newcommand{\fitblankbf}[2][\relax]{%
   \ifx#1\relax
     % 答えが指定されていない場合（従来の使用法）
-    \underline{\hspace*{#2em}}%
+    \hspace{1em}\underline{\hspace*{#2em}}\hspace{1em}%
   \else
     % 答えが指定されている場合
     \ifshowanswer
-      \underline{\makebox[#2em][c]{\textcolor{blue}{\textbf{#1}}}}%
+      \hspace{1em}\underline{\makebox[#2em][c]{\textcolor{blue}{\textbf{#1}}}}\hspace{1em}%
     \else
-      \underline{\hspace*{#2em}}%
+      \hspace{1em}\underline{\hspace*{#2em}}\hspace{1em}%
     \fi
   \fi
 }
@@ -374,7 +396,7 @@
   \ifshowanswer
     {\color{blue}#1}%  数式を青色で表示（下線なし）
   \else
-    \underline{\hspace{3em}\phantom{#1}\hspace{3em}}%  空欄時は答えの幅 + 両端3em（手書き用）+ 黒の下線
+    \underline{\phantom{#1}}%  空欄時は答えの幅 + 黒の下線
   \fi
 }
 
