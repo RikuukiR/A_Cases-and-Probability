@@ -92,6 +92,7 @@
 \end{proof}
 \newpage
 
+% 確率の基本性質
 \subsection{確率の基本性質}
 
 確率の基本性質を議論する前に、事象 $A$, $B$ に対して、次のような事象を定義しておく。
@@ -117,48 +118,263 @@
     \end{definitionbox}
 
     \begin{theorembox}[thm:確率の基本性質]{\textbf{確率の基本性質}}
-        事象 $A$ の確率 $P(A)$ について, 次の性質が成り立つ.
 
-        \begin{align}
-            &0 \leq P(A) \leq 1
-            \label{eq:確率の範囲}\\
-            &P(U) = 1, \quad P(\emptyset) = 0
-            \label{eq:全事象と空事象}\\
-            &P(\bar{A}) = 1 - P(A)
-            \label{eq:余事象の確率}
-        \end{align}
+    \begin{enumerate}
+        \item どんな事象 $A$ についても
+            \begin{align*}
+                \phantom{\text{とくに、空事象 $\emptyset$ について} \qquad} &\bm{0 \leq P(A) \leq 1} \\
+                \text{とくに、空事象 $\emptyset$ について} \qquad &\bm{P(\emptyset) = 0} \\
+                \text{全事象 $U$ について} \qquad &\bm{P(U) = 1}
+            \end{align*}
 
-        ここで, $U$ は全事象, $\emptyset$ は空事象, $\bar{A}$ は事象 $A$ の余事象を表す.
+        \item \uwave{事象 $A$, $B$ が互いに排反であるとき}
+            \begin{align}
+                \bm{P(A \cup B) = P(A) + P(B)}
+                \label{eq:排反事象の確率}
+            \end{align}
+        \end{enumerate}
     \end{theorembox}
+    \vspace{1em}
 
-% \subsection{確率の加法定理}
+    Theorem\ref{thm:確率の基本性質} の(2)を、確率の \textbf{加法定理} という。
 
-    \begin{theorembox}[thm:確率の加法定理]{\textbf{確率の加法定理}}
-        2つの事象 $A$, $B$ について, 次が成り立つ.
+    3つ以上の事象については、どの2つの事象も互いに排反であるとき、これらは 互いに排反である という。
+    3つ以上の排反な事象についても、2つの場合の加法定理と同様なことが成り立つ。
+\newpage
 
-        \begin{align}
-            P(A \cup B) = P(A) + P(B) - P(A \cap B)
-            \label{eq:確率の加法定理}
-        \end{align}
+% 例題10
+\begin{example}[【教p.51 例題10】]
+    赤玉4個、白玉5個の入った袋から、2個の玉を同時に取り出すとき、2個が同じ色である確率を求めよ。
+\end{example}
 
-        特に, $A$ と $B$ が互いに排反である場合（$A \cap B = \emptyset$）, 次が成り立つ.
+\begin{proof}\mbox{}\\
+    まず、起こりうるすべての場合の数を考える。
 
-        \begin{align}
-            P(A \cup B) = P(A) + P(B)
-            \label{eq:排反事象の確率}
-        \end{align}
-    \end{theorembox}
+    全部の $9$ 個から $2$ 個取る組合せは, $\answermath{{}_{9}\mathrm{C}_{2}}$ 通りある.
+
+    次に、求めたい場合の数を考える。
+
+    ここで、「2個が同じ色である」という事象は、
+    \[「2個とも赤玉である」\text{という事象を} A,\]
+    \[「2個とも白玉である」\text{という事象を} B\]
+    の和事象 $A \cup B$ である。
+
+    $A$, $B$ は互いに排反であるから、\answertext{確率の加法定理}より
+
+    \begin{alignanswer*}
+        P(A \cup B) = P(A) + P(B)
+        = \dfrac{{}_{4}\mathrm{C}_{2}}{{}_{9}\mathrm{C}_{2}} + \dfrac{{}_{5}\mathrm{C}_{2}}{{}_{9}\mathrm{C}_{2}}
+        = \dfrac{6}{36} + \dfrac{10}{36} = \dfrac{4}{9}
+    \end{alignanswer*}
+\end{proof}
+\vspace{1em}
+
+\begin{definitionbox}[def:余事象]{\textbf{余事象}}
+    全事象を $U$ とする。事象 $A$ に対して, 「$A$ が起こらない」という事象を $A$ の \textbf{余事象} といい, $\bm{\overline{A}}$ で表す.
+    $A, \overline{A}$ は互いに排反である。
+\end{definitionbox}
+
+\begin{theorembox}[thm:余事象と確率]{\textbf{余事象と確率}}
+    事象 $A$ に対して, $A$ が起こらない事象を $A$ の \textbf{余事象} といい, $\overline{A}$ で表す.
+
+    \begin{align}
+        P(\overline{A}) = 1 - P(A)
+        \label{eq:余事象と確率}
+    \end{align}
+\end{theorembox}
+\newpage
+
+% 例16
+\begin{example}[【教p.52 例16】]
+    1から100までの番号札100枚のから1枚を引くとき、5の倍数でない番号を引く確率を求めよ。
+\end{example}
+\vspace{-1em}%  例題環境後の空行を減らす
+
+\begin{proof}\mbox{}\\
+    まず、起こりうるすべての場合の数を考える。
+
+    $100$ 枚から $1$ 枚引くため, $\answermath{{}_{100}\mathrm{C}_{1}}$ 通りある.
+
+    次に、求めたい場合の数を考える。
+
+    引いた札の番号が「5の倍数でない」という事象は、「\answertext{5の倍数である}」という事象の余事象である。
+
+    5の倍数の番号を引く確率は、$\answermath{\dfrac{20}{100}}$
+
+    よって、求める確率は
+
+    \begin{alignanswer*}
+        1 - \dfrac{20}{100} = 1 - \dfrac{1}{5} = \dfrac{4}{5}
+    \end{alignanswer*}
+    \vspace{-4\baselineskip}%  この証明環境の空行を減らす
+\end{proof}
+\vspace{-0.5em}%  証明環境と例題環境間の空行を減らす
+
+% 応用例題10
+\begin{example}[【教p.52 応用例題10】]
+    1から9までの番号札9枚のから4枚を同時に引くとき、少なくとも1枚が偶数の番号である確率を求めよ。
+\end{example}
+\vspace{-1em}%  例題環境後の空行を減らす
+
+\begin{proof}\mbox{}\\
+    まず、起こりうるすべての場合の数を考える。
+
+    $9$ 枚から $4$ 枚引くため, $\answermath{{}_{9}\mathrm{C}_{4}}$ 通りある.
+
+    次に、求めたい場合の数を考える。
+
+    「少なくとも1枚が偶数」という事象は、「偶数が1枚もない」すなわち「\answertext{4枚とも奇数}」という事象の余事象である。
+
+    奇数の札は5枚ある。
+
+    よって、4枚とも奇数である確率は、$\answermath{\dfrac{{}_{5}\mathrm{C}_{4}}{{}_{9}\mathrm{C}_{4}} = \dfrac{5}{126}}$
+
+    よって、求める確率は、この余事象の確率であるから
+
+    \begin{alignanswer*}
+        1 - \dfrac{5}{126} = \dfrac{121}{126}
+    \end{alignanswer*}
+    \vspace{-4\baselineskip}%  この証明環境の空行を減らす
+\end{proof}
+\newpage
+
+% 一般の和事象の確率
+
+ここまでは、互いに排反な事象についての確率を考えてきた。
+ここからは、2つに事象 $A, B$ が互いに排反でないとき、和事象の確率 $P(A \cup B)$ について考えてみよう。
+
+\begin{theorembox}[thm:一般の和事象の確率]{\textbf{一般の和事象の確率}}
+    全事象を $U$ とする。2つの事象 $A, B$ が互いに排反でないとき、和事象の確率 $P(A \cup B)$ は次の式で表される.
+
+    \begin{align}
+        \bm{P(A \cup B) = P(A) + P(B) - P(A \cap B)}
+        \label{eq:一般の和事象の確率}
+    \end{align}
+\end{theorembox}
+
+% 例17
+\begin{example}[【教p.53 例17】]
+    1から30までの30枚の番号札から1枚引くとき、その番号が2の倍数または3の倍数である確率を求めよ。
+\end{example}
+
+\begin{proof}\mbox{}\\
+    まず、起こりうるすべての場合の数を考える。
+
+    $30$ 枚から $1$ 枚引くため, $\answermath{{}_{30}\mathrm{C}_{1}}$ 通りある.
+
+    次に、求めたい場合の数を考える。
+
+    引いた札の番号が「2の倍数である」という事象を $A$ 、「3の倍数である」という事象を $B$ とすると、
+    求める確率は $\answermath{P(A \cup B)}$ である。
+
+    ここで、
+    \begin{align*}
+        A &= \{2 \cdot 1,\;\; 2 \cdot 2,\;\; 2 \cdot 3,\;\; \cdots \cdots,\;\; 2 \cdot 15\}\\
+        B &= \{3 \cdot 1,\;\; 3 \cdot 2,\;\; 3 \cdot 3,\;\; \cdots \cdots,\;\; 3 \cdot 10\}\\
+        A \cap B &= \{6 \cdot 1,\;\; 6 \cdot 2,\;\; 6 \cdot 3,\;\; \cdots \cdots,\;\; 6 \cdot 5\}
+    \end{align*}
+    であるから、\qquad $n(A) = \answertext{15},\; n(B) = \answertext{10},\; n(A \cap B) = \answertext{5}$ である。
+
+    よって、番号が2の倍数または3の倍数である確率は
+
+    \begin{alignanswer*}
+        P(A \cup B) = P(A) + P(B) - P(A \cap B)
+        = \dfrac{15}{30} + \dfrac{10}{30} - \dfrac{5}{30}
+        = \dfrac{20}{30} = \dfrac{2}{3}
+    \end{alignanswer*}
+\end{proof}
+\newpage
 
 \subsection{独立な試行と確率}
 
-    \begin{theorembox}[thm:独立な試行の確率]{\textbf{独立な試行の確率}}
-        2つの試行 $T_1$, $T_2$ が独立であるとき, 事象 $A$, $B$ について次が成り立つ.
+A、Bの2人がさいころを投げるとする。このとき、Aがさいころを投げる試行と、Bがさいころを投げる試行では、
+それぞれの結果は互いに影響を与えない。
 
+\begin{definitionbox}[def:独立な試行]{\textbf{独立な試行}}
+    いくつかの試行において、どの試行の結果も他の試行の結果に影響を与えないとき、
+    これらの試行は \textbf{独立} であるという。
+\end{definitionbox}
+
+一般に、独立な2つの試行における事象の確率について、次のことが成り立つ。
+
+    \begin{theorembox}[thm:独立な試行の確率]{\textbf{独立な試行の確率}}
+        2つの試行 $S$ と $T$ が独立であるとき, $S$ で事象 $A$ が起こり,かつ $T$ で事象 $B$ が起こる確率 $p$
+        は,\quad $P(A)$ と $P(B)$ の積に等しい。
+
+        すなわち、
         \begin{align}
-            P(A \cap B) = P(A) \cdot P(B)
+            \bm{p = P(A) \times P(B)}
             \label{eq:独立な試行の確率}
         \end{align}
     \end{theorembox}
+    \vspace{1em}
+
+    独立な3つ以上の試行についても、Theorem\ref{thm:独立な試行の確率} と同様なことが成り立つ。
+
+% 例18
+\begin{exercise}[【教p.55 例18】]
+    2枚の硬貨と1個のさいころを投げるとき、次の確率を求めよ。
+    \begin{enumerate}
+        \item 硬貨は2枚とも表が出て、さいころは偶数の目が出る。
+        \item 硬貨は1枚だけが表が出て、さいころは2以下の目が出る。
+    \end{enumerate}
+\end{exercise}
+
+\begin{proof}\mbox{}\\
+    (1) 「硬貨を投げる」という試行と、「さいころを投げる」という試行は独立である。
+
+    硬貨が2枚とも表が出る確率は、$\answermath{\dfrac{1}{2} \times \dfrac{1}{2} = \dfrac{1}{4}}$
+
+    さいころが偶数の目が出る確率は、$\answermath{\dfrac{1}{2}}$
+
+    よって、求める確率は
+
+    \begin{alignanswer*}
+        \dfrac{1}{2} \times \dfrac{1}{2} \times \dfrac{1}{2} = \dfrac{1}{8}
+    \end{alignanswer*}
+\end{proof}
+\newpage
+
+% 例題11
+\begin{example}[【教p.56 例題11】]
+    Aの袋には赤玉3個と白玉2個、Bの袋には赤玉2個と白玉4個が入っている。
+    A、Bの袋から1個ずつ玉を取り出すとき、次の確率を求めよ。
+    \begin{enumerate}
+        \item ともに赤玉を取り出す確率
+        \item 同じ色の玉を取り出す確率
+    \end{enumerate}
+\end{example}
+
+\begin{proof}\mbox{}\\
+    (1) 「Aの袋から玉を1個取り出す」という試行と、「Bの袋から玉を1個取り出す」という試行は独立である。
+
+    Aの袋から赤玉を取り出す確率は、$\answermath{\dfrac{3}{5}}$
+
+    Bの袋から赤玉を取り出す確率は、$\answermath{\dfrac{2}{6}}$
+
+    よって、求める確率は
+
+    \begin{alignanswer*}
+        \dfrac{3}{5} \times \dfrac{2}{6}  = \dfrac{1}{5}
+    \end{alignanswer*}
+\end{proof}
+
+\begin{proof}\mbox{}\\
+    (2) 「Aの袋から玉を1個取り出す」という試行と、「Bの袋から玉を1個取り出す」という試行は独立である。
+
+    また、「同じ色の玉を取り出す」という事象は、「赤玉を取り出す」という場合と「白玉を取り出す」という場合がある。
+
+    ともに赤玉を取り出す確率は、(1)より $\answermath{\dfrac{1}{5}}$
+
+    ともに白玉を取り出す確率は、$\answermath{\dfrac{2}{5} \times \dfrac{4}{6} = \dfrac{4}{15}}$
+
+    これらの事象は互いに排反であるから、求める確率は
+
+    \begin{alignanswer*}
+        \dfrac{1}{5} + \dfrac{4}{15} = \dfrac{3}{15} + \dfrac{4}{15} = \dfrac{7}{15}
+    \end{alignanswer*}
+\end{proof}
+\newpage
 
 % \subsection{反復試行の確率}
 
@@ -171,6 +387,33 @@
             \label{eq:反復試行の確率}
         \end{align}
     \end{theorembox}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
 
 \subsection{条件付き確率}
 
@@ -212,6 +455,11 @@
             % \label{eq:確率の乗法定理}
         \end{align}
     \end{theorembox}
+
+
+
+
+
 
 
 

@@ -361,9 +361,9 @@
 % 空欄時: 答えの幅 + 両端に2em（2文字分）の余白（手書き用）
 \newcommand{\answertext}[1]{%
   \ifshowanswer
-    \textcolor{blue}{#1}%  解答を青色で表示
+    \textcolor{blue}{#1}%  解答を青色で表示（下線なし）
   \else
-    \hspace{2em}\phantom{#1}\hspace{2em}%  空欄時は答えの幅 + 両端2em（手書き用）
+    \uline{\hspace{2em}\phantom{#1}\hspace{2em}}%  空欄時は答えの幅 + 両端2em（手書き用）+ 黒の下線
   \fi
 }
 
@@ -372,9 +372,9 @@
 % 空欄時: 答えの幅 + 両端に3em（3文字分）の余白（手書き用）
 \newcommand{\answermath}[1]{%
   \ifshowanswer
-    {\color{blue}#1}%  数式を青色で表示
+    {\color{blue}#1}%  数式を青色で表示（下線なし）
   \else
-    \hspace{3em}\phantom{#1}\hspace{3em}%  空欄時は答えの幅 + 両端3em（手書き用）
+    \underline{\hspace{3em}\phantom{#1}\hspace{3em}}%  空欄時は答えの幅 + 両端3em（手書き用）+ 黒の下線
   \fi
 }
 
@@ -424,7 +424,7 @@
   \ifshowanswer
     \hspace{0.5em}\textcolor{blue}{#1}\hspace{0.5em}%
   \else
-    \hspace{0.5em}\phantom{#1}\hspace{0.5em}%
+    \uline{\hspace{0.5em}\phantom{#1}\hspace{0.5em}}%  空欄時は黒の下線付き
   \fi
 }
 
