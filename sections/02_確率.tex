@@ -52,6 +52,7 @@
 \begin{example}[【教p.47 例題8】]
     A, B の2人を含む6人のリレー選手がいる. 走る順番をくじで決めるとき, A が1番目, B が6番目になる確率を求めよ.
 \end{example}
+\vspace{-1em}%  例題環境の最後の空行を減らす
 
 \begin{proof}\mbox{}\\
     まず, 起こりうるすべての場合の数を考える.
@@ -67,12 +68,15 @@
     \begin{alignanswer*}
         \dfrac{\answermath{4!}}{\answermath{6!}} = \dfrac{1}{30}
     \end{alignanswer*}
+    \vspace{-4\baselineskip}%  証明環境の最後の空行を減らす
 \end{proof}
+\vspace{-1em}%  証明環境の最後の空行を減らす
 
 % 例題9
 \begin{example}[【教p.47 例題9】]
     赤玉 $4$ 個, 白玉 $5$ 個の入った袋から, $2$ の玉を同時に取り出すとき, 赤玉 $1$ 個, 白玉 $1$ 個が出る確率を求めよ.
 \end{example}
+\vspace{-1em}%  例題環境の最後の空行を減らす
 
 \begin{proof}\mbox{}\\
     まず, 起こりうるすべての場合の数を考える.
@@ -89,6 +93,7 @@
         \dfrac{\answermath{{}_{4}\mathrm{C}_{1} \times {}_{5}\mathrm{C}_{1}}}{\answermath{{}_{9}\mathrm{C}_{2}}}
         = 4 \times 5 \times \dfrac{2 \cdot 1}{9 \cdot 8} = \dfrac{5}{9}
     \end{alignanswer*}
+    \vspace{-4\baselineskip}%  証明環境の最後の空行を減らす
 \end{proof}
 \newpage
 
@@ -291,6 +296,7 @@
 A, Bの2人がさいころを投げるとする. このとき, Aがさいころを投げる試行と, Bがさいころを投げる試行では,
 それぞれの結果は互いに影響を与えない.
 
+% 独立な試行
 \begin{definitionbox}[def:独立な試行]{\textbf{独立な試行}}
     いくつかの試行において, どの試行の結果も他の試行の結果に影響を与えないとき,
     これらの試行は \textbf{独立} であるという.
@@ -308,7 +314,6 @@ A, Bの2人がさいころを投げるとする. このとき, Aがさいころ�
             \label{eq:独立な試行の確率}
         \end{align}
     \end{theorembox}
-    \vspace{1em}
 
     独立な3つ以上の試行についても, Theorem\ref{thm:独立な試行の確率} と同様なことが成り立つ.
 
@@ -320,6 +325,7 @@ A, Bの2人がさいころを投げるとする. このとき, Aがさいころ�
         \item 硬貨は1枚だけが表が出て, さいころは2以下の目が出る.
     \end{enumerate}
 \end{exercise}
+\vspace{-1em}%  練習問題環境の最後の空行を減らす
 
 \begin{proof}\mbox{}\\
     (1) 「硬貨を投げる」という試行と, 「さいころを投げる」という試行は独立である.
@@ -333,6 +339,7 @@ A, Bの2人がさいころを投げるとする. このとき, Aがさいころ�
     \begin{alignanswer*}
         \dfrac{1}{2} \times \dfrac{1}{2} \times \dfrac{1}{2} = \dfrac{1}{8}
     \end{alignanswer*}
+    \vspace{-4\baselineskip}%  証明環境の最後の空行を減らす
 \end{proof}
 \newpage
 
@@ -377,13 +384,12 @@ A, Bの2人がさいころを投げるとする. このとき, Aがさいころ�
 \end{proof}
 \newpage
 
-% \subsection{反復試行の確率}
-
+%反復試行の確率
 \begin{definitionbox}[def:反復試行]{\textbf{反復試行}}
     同じ条件のもとでの試行の繰り返しを \textbf{反復試行} という.
     1つの試行を何回か繰り返すとき, これらの試行は独立である.
 \end{definitionbox}
-\vspace{-1em}%  定義環境と定理環境間の空行を減らす
+\vspace{-1em}%  定義環境の最後の空行を減らす
 
 \begin{theorembox}[thm:反復試行の確率]{\textbf{反復試行の確率}}
     反復試行の確率について, 一般に次のことが成り立つ.
@@ -408,7 +414,7 @@ A, Bの2人がさいころを投げるとする. このとき, Aがさいころ�
         \item 6回目に3度目の赤玉が出る確率
     \end{enumerate}
 \end{example}
-\vspace{-1.5em}%  例題環境後の空行をさらに減らす
+\vspace{-1.5em}%  例題環境の最後の空行を減らす
 
 \begin{proof}\mbox{}\\
     (1) 1回の試行で赤玉が出る確率は, \quad $\answermath{\dfrac{1}{3}}$ である. また, 6回のうち赤玉が5回以上出るのは, 次の場合である.
@@ -421,9 +427,9 @@ A, Bの2人がさいころを投げるとする. このとき, Aがさいころ�
         &= 6 \times \left(\dfrac{1}{3}\right)^5 \times \left(\dfrac{2}{3}\right) + \left(\dfrac{1}{3}\right)^6\\
         &= \dfrac{13}{729}
     \end{alignanswer*}
-    \vspace{-5\baselineskip}%  この証明環境の空行をさらに減らす
+    \vspace{-6\baselineskip}%  証明環境の最後の空行を減らす
 \end{proof}
-\vspace{-1.5em}%  証明環境間の空行をさらに減らす
+\vspace{-2em}%  証明環境の最後の空行を減らす
 
 \begin{proof}\mbox{}\\
     (2) 5回目までに \answertext{赤玉がちょうど2回} 出て, 6回目に3度目の赤玉が出る確率であるから
@@ -433,7 +439,7 @@ A, Bの2人がさいころを投げるとする. このとき, Aがさいころ�
         &= 10 \times \left(\dfrac{1}{3}\right)^2 \times \left(\dfrac{2}{3}\right)^3 \times \left(\dfrac{1}{3}\right)\\
         &= \dfrac{80}{729}
     \end{alignanswer*}
-    \vspace{-5\baselineskip}%  この証明環境の空行をさらに減らす
+    \vspace{-6\baselineskip}%  証明環境の最後の空行を減らす
 \end{proof}
 \newpage
 
@@ -497,7 +503,6 @@ A, Bの2人がさいころを投げるとする. このとき, Aがさいころ�
             \label{eq:条件付き確率1}
         \end{align}
     \end{definitionbox}
-    \vspace{-0.5em}%  定義環境と定理環境間の空行を減らす
 
     式\ref{eq:条件付き確率1} の右辺の分母と分子を, それぞれ $n(U)$ で割ると, 次の等式が得られる.
 
@@ -509,20 +514,20 @@ A, Bの2人がさいころを投げるとする. このとき, Aがさいころ�
             \label{eq:条件付き確率2}
         \end{align}
     \end{theorembox}
-    \vspace{-1em}%  定理環境と例題環境間の空行を減らす
+    \vspace{-2em}%  定理環境の最後の空行を減らす
 
 % 例題13
 \begin{example}[【教p.61 例題13】]
     ある博物館の入館者のうち, 全体の20\%が高校生で, 全体の15\%が前売り券で入館した高校生である.
     入館した高校生の中から1人を選び出すとき, その人が前売り券で入館している確率を求めよ.
 \end{example}
-\vspace{-1em}%  例題環境後の空行を減らす
+\vspace{-3em}%  例題環境の最後の空行を減らす
 
 \begin{techniquebox}[tech:82]{\textbf{条件付き確率は、2つの確率を求めよ!}}
 Theorem\ref{thm:条件付き確率} より, 「$A$ が起こる確率」と, 「$A$ と $B$ がともに起こる確率」の2つを求めるだけで, 条件付き確率を求めることができる.
 すなわち, \textbf{条件付き確率の問題は確率2問分にすぎない} ということである.
 \end{techniquebox}
-\vspace{-1em}%  テクニックボックスと証明環境間の空行を減らす
+\vspace{-1em}%  テクニックボックスの最後の空行を減らす
 
 \begin{proof}\mbox{}\\
     入館者全体から選び出された1人が高校生であるという事象を $A$ , 前売り券で入館しているという事象を $B$ とすると
@@ -533,7 +538,7 @@ Theorem\ref{thm:条件付き確率} より, 「$A$ が起こる確率」と, 「
     \begin{alignanswer*}
         P_A(B) = \dfrac{P(A \cap B)}{P(A)} = \dfrac{\dfrac{15}{100}}{\dfrac{20}{100}} = \dfrac{15}{20} = \dfrac{3}{4}
     \end{alignanswer*}
-    \vspace{-4\baselineskip}%  証明環境の空行を減らす
+    \vspace{-7\baselineskip}%  証明環境の最後の空行を減らす
 \end{proof}
 \newpage
 
@@ -542,7 +547,7 @@ Theorem\ref{thm:条件付き確率} より, 「$A$ が起こる確率」と, 「
     大人と子どもの人数の比が 3 : 2 であるグループに, ある提案をしたところ, 子供で賛成した人数は全体の15\%であった.
     このグループの子どもの中から1人選び出すとき, その人が提案に賛成である確率を求めよ.
 \end{exercise}
-\vspace{-1em}%  練習問題環境後の空行を減らす
+\vspace{-1em}%  練習問題環境の最後の空行を減らす
 
 \begin{proof}\mbox{}\\
     \answertext{グループから選び出された1人が子どもである} という事象を $A$ , \answertext{提案に賛成である} という事象を $B$ とすると
@@ -554,9 +559,9 @@ Theorem\ref{thm:条件付き確率} より, 「$A$ が起こる確率」と, 「
         P_A(B) = \dfrac{P(A \cap B)}{P(A)} &= \dfrac{\dfrac{15}{100}}{\dfrac{2}{5}}\\
         &= \dfrac{15}{100} \times \dfrac{5}{2} = \dfrac{3}{8}
     \end{alignanswer*}
-    \vspace{-4\baselineskip}%  証明環境の空行を減らす
+    \vspace{-6\baselineskip}%  証明環境の最後の空行を減らす
 \end{proof}
-\vspace{-1em}%  証明環境と練習問題環境間の空行を減らす
+\vspace{-2em}%  証明環境と練習問題環境間の空行を減らす
 
 % MASTERKEY
 \begin{exercise}[【MASTERKEYp.127 例題】]
@@ -565,7 +570,7 @@ Theorem\ref{thm:条件付き確率} より, 「$A$ が起こる確率」と, 「
 
     この製品の中から無作為に1つを選んで調べたところ不良品であったとき, それが工場 X の製品である確率を求めよ.
 \end{exercise}
-\vspace{-1em}%  練習問題環境後の空行を減らす
+\vspace{-1.5em}%  練習問題環境後の空行を減らす
 
 \begin{proof}\mbox{}\\
     \answertext{不良品である} という事象を $A$ , \answertext{工場 X の製品である} という事象を $B$ とすると
@@ -582,7 +587,7 @@ Theorem\ref{thm:条件付き確率} より, 「$A$ が起こる確率」と, 「
         P_A(B) &= \dfrac{P(A \cap B)}{P(A)} = \dfrac{\dfrac{250}{10000}}{\dfrac{380}{10000}} \\
         &= \dfrac{250}{380} = \dfrac{25}{38}
     \end{alignanswer*}
-    \vspace{-4\baselineskip}%  証明環境の空行を減らす
+    \vspace{-5\baselineskip}%  証明環境の空行を減らす
 \end{proof}
 \newpage
 
@@ -687,12 +692,113 @@ Theorem\ref{thm:条件付き確率} より, 「$A$ が起こる確率」と, 「
 % 期待値
 \subsection{期待値}
 
+\begin{definitionbox}[def:期待値]{\textbf{期待値}}
+    一般に, ある試行の結果に応じて, $x_1, x_2, \; \cdots\cdots, \; x_n$ のどれか1つの値をとる数量 $X$ があり,
+    各値をとる確率が
 
+    \[p_1, p_2, \; \cdots\cdots, \; p_n \qquad \text{ただし} \quad p_1 + p_2 + \; \cdots\cdots + \; p_n = 1\]
 
+    であるとき, $x_1 p_1 + x_2 p_2 + \; \cdots\cdots + \; x_n p_n$ を数量 $X$ の \textbf{期待値} という.
+\end{definitionbox}
 
+\begin{theorembox}[thm:期待値]{\textbf{期待値}}
+    \begin{minipage}[t]{0.5\textwidth}
+        $X$ の取りうる値と確率が右の表のようなとき, $X$ の期待値は, 次の式で与えられる.
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+        \begin{center}
+        \begin{tabular}{c||cccc|c}
+            $X$ & $x_1$ & $x_2$ & $\cdots$ & $x_n$ & 計 \\
+            \hline
+            確率 & $p_1$ & $p_2$ & $\cdots$ & $p_n$ & $1$ \\
+        \end{tabular}
+        \end{center}
+    \end{minipage}
 
+    \vspace{0.5em}
+    \[\bm{x_1 p_1 + x_2 p_2 + \; \cdots\cdots + \; x_n p_n}\]
+    \label{eq:期待値}
+\end{theorembox}
+\vspace{-2em}% 定理環境の最後の空行を減らす
 
+% 練習56
+\begin{exercise}[【教p.68 練習56】]
+    5枚の硬貨を同時に投げて, 表の出た枚数が 5, 4, 3 の場合に, それぞれ得点 40, 16, 4 を得るが,
+    それ以外の場合には得点は得られないとする. 得点の期待値を求めよ.
+\end{exercise}
 
+\begin{proof}\mbox{}\\
+    1枚の硬貨を投げるとき, 表の出る確率は $\answermath{\dfrac{1}{2}}$ , 裏の出る確率は $\answermath{\dfrac{1}{2}}$ である.
 
+    5枚の硬貨を投げて5枚とも表が出る確率は
 
+    \[\answermath{{}_5\mathrm{C}_5 \left(\dfrac{1}{2}\right)^5 \left(\dfrac{1}{2}\right)^0 = \dfrac{1}{32}}\]
 
+    5枚の硬貨を投げて4枚が表で1枚が裏が出る確率は
+
+    \[\answermath{{}_5\mathrm{C}_4 \left(\dfrac{1}{2}\right)^4 \left(\dfrac{1}{2}\right)^1 = \dfrac{5}{32}}\]
+
+    5枚の硬貨を投げて3枚が表で2枚が裏が出る確率は
+
+    \[\answermath{{}_5\mathrm{C}_3 \left(\dfrac{1}{2}\right)^3 \left(\dfrac{1}{2}\right)^2 = \dfrac{10}{32}}\]
+    したがって, 得点と確率の関係は次の表のようになる.
+
+    \begin{center}
+    \begin{tabular}{c||ccc|c}
+        得点 & 40 & 16 & 4 & 計 \\
+        \hline
+        確率 & \quad $\answermath{\dfrac{1}{32}}$ \quad & \quad $\answermath{\dfrac{5}{32}}$ \quad & \quad $\answermath{\dfrac{10}{32}}$ \quad & $1$ \\
+    \end{tabular}
+    \end{center}
+
+    よって、得点の期待値は
+
+    \[\answermath{40 \times \dfrac{1}{32} + 16 \times \dfrac{5}{32} + 4 \times \dfrac{10}{32}
+    = \dfrac{1}{32}\left(40 + 80 + 40\right) = \dfrac{160}{32} = 5}\]
+    \vspace{-6\baselineskip}%  証明終了記号を前のページに押し込む
+\end{proof}
+
+% 応用例題12
+    \begin{example}[【教p.69 応用例題12】]
+        赤玉2個と白玉3が入った袋から, 3個の玉を同時に取り出し, 出た赤玉1個につき100円もらえるゲームがある.
+        このゲームの参加料が150円のとき, このゲームに参加することは得であるといえるか.
+    \end{example}
+
+    \begin{problemsolution}[15cm]\mbox{}\\
+        受け取る金額の期待値が参加料よりも大きいときに得であると判断する.
+    \vspace{1em}
+
+    出る赤玉の個数は,0, 1, 2 のいずれかである。
+
+    赤玉が0個の確率は
+
+    \[\dfrac{{}_3\mathrm{C}_0}{{}_5\mathrm{C}_3} = \dfrac{1}{10}\]
+
+    赤玉が1個の確率は
+
+    \[\dfrac{{}_2\mathrm{C}_1 \times {}_3\mathrm{C}_2}{{}_5\mathrm{C}_3} = \dfrac{6}{10}\]
+
+    赤玉が2個の確率は
+
+    \[\dfrac{{}_2\mathrm{C}_2 \times {}_3\mathrm{C}_1}{{}_5\mathrm{C}_3} = \dfrac{3}{10}\]
+
+    よって, 受け取る金額を $X$ 円とすると, 次のような表ができる.
+
+    \begin{center}
+    \begin{tabular}{c||ccc|c}
+        $X$ & 0 & 100 & 200 & 計 \\
+        \hline
+        確率 & \quad $\dfrac{1}{10}$ \quad & \quad $\dfrac{6}{10}$ \quad & \quad $\dfrac{3}{10}$ \quad & $1$ \\
+    \end{tabular}
+    \end{center}
+
+    したがって, ゲームに参加したときの受け取る金額の期待値は
+
+    \[0 \times \dfrac{1}{10} + 100 \times \dfrac{6}{10} + 200 \times \dfrac{3}{10}
+    = \dfrac{1}{10}\left(0 + 600 + 600\right) = 120\]
+
+    よって, 受け取る金額の期待値がゲームの参加料より小さいから, ゲームに参加することは得であるといえない.
+
+    \end{problemsolution}
+\newpage
