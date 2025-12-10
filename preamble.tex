@@ -43,6 +43,9 @@
 % 平均記号のバーを長くするコマンド
 \newcommand{\mean}[1]{\overline{#1}}
 
+% 添字内で使う余事象の表記（印刷時も見やすいように少し太めのバー）
+\newcommand{\comp}[1]{\bar{#1}}
+
 % 分数の穴埋めコマンド（下線なし）
 % 分数用コマンド（表専用 - 分子を空欄にしてレイアウト保持）
 \newcommand{\fracblank}[2]{%
@@ -54,9 +57,9 @@
 }
 
 % enumerate環境のデフォルト設定（問題環境等で使用）
-\setlist[enumerate,1]{label=\arabic*., leftmargin=*, labelsep=0.5em}
-\setlist[enumerate,2]{label=\alph*., leftmargin=*, labelsep=0.5em}
-\setlist[enumerate,3]{label=\roman*., leftmargin=*, labelsep=0.5em}
+\setlist[enumerate,1]{label=（\arabic*）, leftmargin=*, labelsep=0.5em}
+\setlist[enumerate,2]{label=（\alph*）, leftmargin=*, labelsep=0.5em}
+\setlist[enumerate,3]{label=（\roman*）, leftmargin=*, labelsep=0.5em}
 
 % itemize環境を数学の場合分け用（（ⅰ）, （ⅱ）形式）に設定
 \newcounter{itemizecounter}
@@ -380,23 +383,23 @@
 
 % インライン用（テキスト・数式両用）
 % 使い方: \answertext{答え}
-% 空欄時: 答えの幅 + 両端に2em（2文字分）の余白（手書き用）
+% 空欄時: 答えの幅 + 両端に3em（3文字分）の余白（手書き用）
 \newcommand{\answertext}[1]{%
   \ifshowanswer
     \textcolor{blue}{#1}%  解答を青色で表示（下線なし）
   \else
-    \uline{\hspace{2em}\phantom{#1}\hspace{2em}}%  空欄時は答えの幅 + 両端2em（手書き用）+ 黒の下線
+    \uline{\hspace{3em}\phantom{#1}\hspace{3em}}%  空欄時は答えの幅 + 両端3em（手書き用）+ 黒の下線
   \fi
 }
 
 % 数式ブロック用（align環境など内部で使用）
 % 使い方: \answermath{数式}
-% 空欄時: 答えの幅 + 両端に3em（3文字分）の余白（手書き用）
+% 空欄時: 答えの幅 + 両端に4em（4文字分）の余白（手書き用）
 \newcommand{\answermath}[1]{%
   \ifshowanswer
     {\color{blue}#1}%  数式を青色で表示（下線なし）
   \else
-    \underline{\phantom{#1}}%  空欄時は答えの幅 + 黒の下線
+    \underline{\hspace{4em}\phantom{#1}\hspace{4em}}%  空欄時は答えの幅 + 両端4em（手書き用）+ 黒の下線
   \fi
 }
 
